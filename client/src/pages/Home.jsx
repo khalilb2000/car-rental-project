@@ -10,27 +10,21 @@ const Home = () => {
   // const thoughts = data?.thoughts || [];
 
   return (
-    <main>
-      {/* <div className="flex-row justify-center">
-        <div
-          className="col-12 col-md-10 mb-3 p-3"
-          style={{ border: '1px dotted #1a1a1a' }}
-        >
-          <ThoughtForm />
-        </div>
-        <div className="col-12 col-md-8 mb-3">
-          {loading ? (
-            <div>Loading...</div>
-          ) : (
-            <ThoughtList
-              thoughts={thoughts}
-              title="Some Feed for Thought(s)..."
-            />
-          )}
-        </div> */}
-      {/* </div> */}
-    </main>
+    <div className="wheels-on-demand-page">
+      <h1>Plan your trip now!!</h1>
+      <button className="plan-trip-button">Plan Trip Now</button>
+
+      <div className="section">
+        <h2>Save with our car rental</h2>
+        <p>Learn More > </p>
+      </div>
+
+      <div className="section">
+        <h2>Book Ride</h2>
+        <p>Learn More > </p>
+      </div>
+    </div>
   );
-};
+}
 
 export default Home;
