@@ -12,15 +12,15 @@ const Home = () => {
   return (
     <div className="wheels-on-demand-page">
       <div className="section">
-        <h2>Save with our car rental</h2>
-        <p>Learn More > </p>
+        <h5>Plan your trip now!</h5>
       </div>
-
-      <div className="section">
-        <h2>Book Ride</h2>
-        <p>Learn More > </p>
+      <div className="text">
+        <h1>SAVE with our car rental</h1>
       </div>
-      <button className="plan-trip-button">Plan Trip Now</button>
+      <div className="button-section">
+      </div>
+      <button className="book-ride-button">Book Ride</button>
+      <button className="learn-more-button ml-4">Learn More</button>
     </div>
   );
 }
