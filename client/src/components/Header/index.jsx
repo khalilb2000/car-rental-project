@@ -1,22 +1,38 @@
 import { Link } from 'react-router-dom';
 
-import Auth from '../../utils/auth';
+// import Auth from '../../utils/auth';
+import carSVG from '../../assets/car-solid.svg';
+import barsSVG from '../../assets/bars-solid.svg';
+
+const svgStyle = {
+  heigth: '2rem',
+  width: '2rem',
+}
+const styles = {
+  letterStyle: {
+   fontSize: '2rem',
+   color: 'black'
+  },
+}
 
 const Header = () => {
-  const logout = (event) => {
-    event.preventDefault();
-    Auth.logout();
-  };
+  // const logout = (event) => {
+  //   event.preventDefault();
+  //   Auth.logout();
+  // };
+
+
   return (
-    <header className="bg-primary text-light mb-4 py-3 flex-row align-center">
-      <div className="container flex-row justify-space-between-lg justify-center align-center">
+    <header className="d-flex text-light mb-4 py-3 flex-row align-center">
+      <div className="container justify-space-between-lg justify-center align-center">
         <div>
-          <Link className="text-light" to="/">
-            <h1 className="m-0">Tech Thoughts</h1>
+          <Link className="flex-row justify-space-between" to="/">
+            <img src={carSVG} style= {svgStyle}/>
+            <h1 className="m-0" style={styles.letterStyle}>WheelsOnDemand</h1>
+            <img  src={barsSVG} style={svgStyle}/>
           </Link>
-          <p className="m-0">Get into the mind of a programmer.</p>
         </div>
-        <div>
+        {/* <div>
           {Auth.loggedIn() ? (
             <>
               <Link className="btn btn-lg btn-info m-2" to="/me">
@@ -36,7 +52,7 @@ const Header = () => {
               </Link>
             </>
           )}
-        </div>
+        </div> */}
       </div>
     </header>
   );
