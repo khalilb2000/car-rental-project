@@ -11,9 +11,6 @@ const Home = () => {
 
   return (
     <div className="wheels-on-demand-page">
-      <h1>Plan your trip now!!</h1>
-      <button className="plan-trip-button">Plan Trip Now</button>
-
       <div className="section">
         <h2>Save with our car rental</h2>
         <p>Learn More > </p>
@@ -23,6 +20,7 @@ const Home = () => {
         <h2>Book Ride</h2>
         <p>Learn More > </p>
       </div>
+      <button className="plan-trip-button">Plan Trip Now</button>
     </div>
   );
 }
