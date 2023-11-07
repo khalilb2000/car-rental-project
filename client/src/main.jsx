@@ -3,38 +3,40 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import App from './App.jsx';
 import Home from './pages/Home';
-// import Signup from './pages/Payment.jsx';
-// import Login from './pages/Login';
-// import SingleThought from './pages/About.jsx';
-// import Profile from './pages/ProductInfo.jsx';
-// import ErrorPage from './pages/location.jsx';
+import Signup from './pages/Signup.jsx';
+import Login from './pages/Login';
+import About from './pages/About.jsx';
+import Product from './pages/Product.jsx';
+import Payment from './pages/Payment.jsx'
+import Cart from './pages/Cart.jsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
-    // errorElement: <ErrorPage />,
     children: [
       {
         index: true,
         element: <Home />
-      },
-      //
-      //   path: '/login',
-      //   element: <Login />
-      // }, {
-      //   path: '/signup',
-      //   element: <Signup />
-      // }, {
-      //   path: '/profiles/:username',
-      //   element: <Profile />
-      // }, {
-      //   path: '/me',
-      //   element: <Profile />
-      // }, {
-      //   path: '/thoughts/:thoughtId',
-      //   element: <SingleThought />
-      // }
+      }, {
+        path: '/login',
+        element: <Login />
+      }, {
+        path: '/signup',
+        element: <Signup />
+      }, {
+        path: '/Product',
+        element: <Product />
+      }, {
+        path: '/About',
+        element: <About />
+      }, {
+        path: '/Payment',
+        element: <Payment />
+      }, {
+        path: '/Cart',
+        element: <Cart />
+      }
     ]
   },
 ]);

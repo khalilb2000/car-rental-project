@@ -15,34 +15,61 @@ export default function Header() {
   //   Auth.logout();
   // };
 
+// import Auth from '../../utils/auth';
+// import carSVG from '../../assets/car-solid.svg';
+// import barsSVG from '../../assets/bars-solid.svg';
+
+const svgStyle = {
+  heigth: '2rem',
+  width: '2rem',
+}
+const styles = {
+  letterStyle: {
+   fontSize: '2rem',
+   color: 'black'
+  },
+}
+
+const Header = () => {
+  // const logout = (event) => {
+  //   event.preventDefault();
+  //   Auth.logout();
+  // };
+
 
   return (
-    <>
-      <header className="navBarContainer">
-          <Link className="logo sm-col-3 md-col-5 lg-col-6" to="/">
-            <img src={carSVG} className="logo" alt="Car" style={svgStyle} />
-            <h1 className="title">WheelsOnDemand</h1>
-            {/* <img src={barsSVG} className="bars" alt="Bars" style={svgStyle} /> */}
-          </Link>
-          <img src={barsSVG} className="bars" alt="Bars" style={svgStyle} />
-        <div className='navBtn lg-col-6'>
-          <Link to="/about" className="link" activeClassName="active">
-            About
-          </Link>
-          <Link to="/home" className="link" activeClassName="active">
-            Home
-          </Link>
-          <Link to="/contact" className="link" activeClassName="active">
-            Contact us
-          </Link>
-          <Link to="/login" className="link" activeClassName="active">
-            Login
-          </Link>
-          <Link to="/logout" className="link" activeClassName="active">
-            Logout
+    <header className="d-flex text-light mb-4 py-3 flex-row align-center">
+      <div className="container justify-space-between-lg justify-center align-center">
+        <div>
+          <Link className="flex-row justify-space-between" to="/">
+            <img src={carSVG} style= {svgStyle}/>
+            <h1 className="m-0" style={styles.letterStyle}>WheelsOnDemand</h1>
+            <img  src={barsSVG} style={svgStyle}/>
           </Link>
         </div>
-      </header>
-    </>
+        {/* <div>
+          {Auth.loggedIn() ? (
+            <>
+              <Link className="btn btn-lg btn-info m-2" to="/me">
+                {Auth.getProfile().data.username}'s profile
+              </Link>
+              <button className="btn btn-lg btn-light m-2" onClick={logout}>
+                Logout
+              </button>
+            </>
+          ) : (
+            <>
+              <Link className="btn btn-lg btn-info m-2" to="/login">
+                Login
+              </Link>
+              <Link className="btn btn-lg btn-light m-2" to="/signup">
+                Signup
+              </Link>
+            </>
+          )}
+        </div> */}
+      </div>
+    </header>
   );
-};
+}
+}
