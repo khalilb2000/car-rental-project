@@ -7,6 +7,8 @@ import Signup from './pages/Signup.jsx';
 import Login from './pages/Login';
 import About from './pages/About.jsx';
 import Product from './pages/Product.jsx';
+import Payment from './pages/Payment.jsx'
+import Cart from './pages/Cart.jsx';
 
 const router = createBrowserRouter([
   {
@@ -28,7 +30,13 @@ const router = createBrowserRouter([
       }, {
         path: '/About',
         element: <About />
-      }, 
+      }, {
+        path: '/Payment',
+        element: <Payment />
+      }, {
+        path: '/Cart',
+        element: <Cart />
+      }
     ]
   },
 ]);
