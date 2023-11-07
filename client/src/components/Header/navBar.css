@@ -1,0 +1,50 @@
+/* styles.css */
+
+.navBarContainer {
+  /* background: #000; */
+  height: 80px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 10;
+  width: 100%;
+}
+.logo{
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  align-items: center;
+  gap: 3rem;
+}
+
+.navBtn{
+  display: flex;
+  justify-content: space-around;
+}
+.bars{
+  display: none;
+}
+
+/* @media screen and (max-width: 768px) {
+.navBtn{
+  display: none;
+}
+} */
+
+@media screen and (max-width: 992px) {
+  .navBarContainer .bars {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(-100%, 75%);
+    font-size: 1.8rem;
+    cursor: pointer;
+  }
+  .navBtn{
+    display: none;
+  }
+  .navBarContainer .title {
+    font-size: 2rem;
+  }
+}
