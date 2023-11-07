@@ -1,8 +1,23 @@
-import { Link } from 'react-router-dom';
-
+import { Link} from 'react-router-dom';
 // import Auth from '../../utils/auth';
+import './navBar.css';
 import carSVG from '../../assets/car-solid.svg';
 import barsSVG from '../../assets/bars-solid.svg';
+
+const svgStyle = {
+  heigth: '2rem',
+  width: '2rem',
+}
+
+export default function Header() {
+  // const logout = (event) => {
+  //   event.preventDefault();
+  //   Auth.logout();
+  // };
+
+// import Auth from '../../utils/auth';
+// import carSVG from '../../assets/car-solid.svg';
+// import barsSVG from '../../assets/bars-solid.svg';
 
 const svgStyle = {
   heigth: '2rem',
@@ -56,6 +71,5 @@ const Header = () => {
       </div>
     </header>
   );
-};
-
-export default Header;
+}
+}
