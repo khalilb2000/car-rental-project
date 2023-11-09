@@ -21,7 +21,7 @@ const ProductInfo = () => {
       {/* show the sedan option */}
         <div className="sedan">
           <h3 className="card-header">Sedan</h3>
-          <img> </img>
+          {/* <img> </img> */}
         </div>
   
         <button className="book-ride">Book Ride</button>
@@ -29,7 +29,7 @@ const ProductInfo = () => {
         {/* show the truck option */}
         <div className="truck">
           <h3 className="card-header">Truck</h3>
-          <img> </img>
+          {/* <img> </img> */}
         </div>
   
         <button className="book-ride">Book Ride</button>
@@ -37,7 +37,7 @@ const ProductInfo = () => {
         {/* show the van option */}
         <div className="minivan">
           <h3 className="card-header">Minivan</h3>
-          <img> </img>
+          {/* <img> </img> */}
         </div>
   
         <button className="book-ride">Book Ride</button>
@@ -45,7 +45,7 @@ const ProductInfo = () => {
         {/* show the sports car option */}
         <div className="sports-car">
           <h3 className="card-header">Sports Car</h3>
-          <img> </img>
+          {/* <img> </img> */}
         </div>
   
         <button className="book-ride">Book Ride</button>
@@ -54,7 +54,7 @@ const ProductInfo = () => {
         {/* show the moving truck option */}
         <div className="moving-truck">
           <h3 className="card-header">Moving Truck</h3>
-          <img> </img>
+          {/* <img> </img> */}
         </div>
   
         <button className="book-ride">Book Ride</button>
