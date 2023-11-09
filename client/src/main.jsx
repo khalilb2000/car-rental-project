@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 
 import App from './App.jsx';
 import Home from './pages/Home';
-// import Signup from './pages/Signup.jsx';
+import Signup from './pages/Signup.jsx';
 import Login from './pages/Login';
 // import About from './pages/About.jsx';
 // import Product from './pages/Product.jsx';
@@ -23,10 +23,10 @@ const router = createBrowserRouter([
       {
         path: '/login',
         element: <Login />
-      },
-    //     path: '/signup',
-    //     element: <Signup />
-    //   }, {
+      },{
+        path: '/signup',
+        element: <Signup />
+      }, 
     //     path: '/Product',
     //     element: <Product />
     //   }, {
