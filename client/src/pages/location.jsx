@@ -11,6 +11,7 @@ const LocationPage = () => {
     const [pickupDate, setPickupDate] = useState('');
     const [time, setTime] = useState('');
     const [dropOffDate, setDropOffDate] = useState('');
+    const [setChooseCar] = useState(null);
 
     const { isLoaded } = useJsApiLoader({
         id: 'google-map-script',
@@ -36,6 +37,9 @@ const LocationPage = () => {
         }
     };
 
+    const handleGoToCars = (car) => {
+        setChooseCar(car);
+    }
 
     const onMapClick = (event) => {
         setSelectedLocation({
@@ -102,6 +106,11 @@ const LocationPage = () => {
                 <></>
             </GoogleMap> : <></>
             }
+
+            <div>
+                <h3>Select Your Car Now</h3>
+                <button onClick={() => handleGoToCars('Car')}>Car</button>
+            </div>
         </div>
     );
 };
