@@ -4,8 +4,11 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 
 import App from './App.jsx';
 import Home from './pages/Home';
+
+import LocationPage from './pages/location'
 import Signup from './pages/Signup.jsx';
 import Login from './pages/Login';
+
 // import About from './pages/About.jsx';
 // import Product from './pages/Product.jsx';
 // import Payment from './pages/Payment.jsx'
@@ -21,6 +24,12 @@ const router = createBrowserRouter([
         element: <Home />
       },
       {
+
+        path: '/location',
+        element: <LocationPage />
+      },
+
+
         path: '/login',
         element: <Login />
       },{
@@ -39,6 +48,7 @@ const router = createBrowserRouter([
     //     path: '/Cart',
     //     element: <Cart />
       // }
+
     ]
   },
 ]);
