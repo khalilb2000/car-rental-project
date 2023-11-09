@@ -1,4 +1,4 @@
-import { Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 // import Auth from '../../utils/auth';
 import './navBar.css';
 import carSVG from '../../assets/car-solid.svg';
@@ -19,12 +19,12 @@ export default function Header() {
   return (
     <>
       <header className="navBarContainer">
-          <Link className="logo sm-col-3 md-col-5 lg-col-6" to="/">
-            <img src={carSVG} className="logo" alt="Car" style={svgStyle} />
-            <h1 className="title">WheelsOnDemand</h1>
-            {/* <img src={barsSVG} className="bars" alt="Bars" style={svgStyle} /> */}
-          </Link>
-          <img src={barsSVG} className="bars" alt="Bars" style={svgStyle} />
+        <Link className="logo sm-col-3 md-col-5 lg-col-6" to="/">
+          <img src={carSVG} className="logo" alt="Car" style={svgStyle} />
+          <h1 className="title">WheelsOn<span>Demand</span></h1>
+          {/* <img src={barsSVG} className="bars" alt="Bars" style={svgStyle} /> */}
+        </Link>
+        <img src={barsSVG} className="bars" alt="Bars" style={svgStyle} />
         <div className='navBtn lg-col-6'>
           <Link to="/about" className="link" activeClassName="active">
             About
@@ -35,12 +35,21 @@ export default function Header() {
           <Link to="/contact" className="link" activeClassName="active">
             Contact us
           </Link>
-          <Link to="/login" className="link" activeClassName="active">
-            Login
-          </Link>
-          <Link to="/logout" className="link" activeClassName="active">
-            Logout
-          </Link>
+          <div className='importantBox'>
+            <Link to="/login" className="link" activeClassName="active">
+              Login
+            </Link>
+          </div>
+          <div className='importantBox'>
+            <Link to="/signup" className="link" activeClassName="active">
+              Signup
+            </Link>
+          </div>
+          <div className='importantBox'>
+            <Link to="/logout" className="link" activeClassName="active">
+              Logout
+            </Link>
+          </div>
         </div>
       </header>
     </>
