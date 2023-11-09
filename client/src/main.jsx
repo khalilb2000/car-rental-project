@@ -3,6 +3,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import App from './App.jsx';
 import Home from './pages/Home';
+import LocationPage from './pages/location'
 // import Signup from './pages/Signup.jsx';
 // import Login from './pages/Login';
 // import About from './pages/About.jsx';
@@ -19,25 +20,29 @@ const router = createBrowserRouter([
         index: true,
         element: <Home />
       },
+      {
+        path: '/location',
+        element: <LocationPage />
+      },
       // {
-    //     path: '/login',
-    //     element: <Login />
-    //   }, {
-    //     path: '/signup',
-    //     element: <Signup />
-    //   }, {
-    //     path: '/Product',
-    //     element: <Product />
-    //   }, {
-    //     path: '/About',
-    //     element: <About />
-    //   }, {
-    //     path: '/Payment',
-    //     element: <Payment />
-    //   }, {
-    //     path: '/Cart',
-    //     element: <Cart />
-    //   }
+      //     path: '/login',
+      //     element: <Login />
+      //   }, {
+      //     path: '/signup',
+      //     element: <Signup />
+      //   }, {
+      //     path: '/Product',
+      //     element: <Product />
+      //   }, {
+      //     path: '/About',
+      //     element: <About />
+      //   }, {
+      //     path: '/Payment',
+      //     element: <Payment />
+      //   }, {
+      //     path: '/Cart',
+      //     element: <Cart />
+      //   }
     ]
   },
 ]);
