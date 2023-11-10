@@ -1,56 +1,30 @@
-// // Import the `useParams()` hook
-// import { useParams } from 'react-router-dom';
-// import { useQuery } from '@apollo/client';
-
-// import CommentList from '../components/CommentList';
-// import CommentForm from '../components/Navigation.jsx/index.jsx';
-
-// import { QUERY_SINGLE_THOUGHT } from '../utils/queries.js';
-
-// const SingleThought = () => {
-//   // Use `useParams()` to retrieve value of the route parameter `:profileId`
-//   const { thoughtId } = useParams();
-
-//   const { loading, data } = useQuery(QUERY_SINGLE_THOUGHT, {
-//     // pass URL parameter
-//     variables: { thoughtId: thoughtId },
-//   });
-
-//   const thought = data?.thought || {};
-
-//   if (loading) {
-//     return <div>Loading...</div>;
-//   }
-//   return (
-//     <div className="my-3">
-//       <h3 className="card-header bg-dark text-light p-2 m-0">
-//         {thought.thoughtAuthor} <br />
-//         <span style={{ fontSize: '1rem' }}>
-//           had this thought on {thought.createdAt}
-//         </span>
-//       </h3>
-//       <div className="bg-light py-4">
-//         <blockquote
-//           className="p-4"
-//           style={{
-//             fontSize: '1.5rem',
-//             fontStyle: 'italic',
-//             border: '2px dotted #1a1a1a',
-//             lineHeight: '1.5',
-//           }}
-//         >
-//           {thought.thoughtText}
-//         </blockquote>
-//       </div>
-
-//       <div className="my-5">
-//         <CommentList comments={thought.comments} />
-//       </div>
-//       <div className="m-3 p-4" style={{ border: '1px dotted #1a1a1a' }}>
-//         <CommentForm thoughtId={thought._id} />
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default SingleThought;
+function About() {
+  return (
+    <section>
+      <div className="container">
+        <div className="row">
+          <div className="col-md-12">
+            <h2>About Our Company </h2>
+            <p>
+              We're more than just a car rental company -
+              we're your trusted partner in adventure and exploration. Founded
+              with a passion for travel and a commitment to making your journey
+              exceptional and we're thrilled to be a part of your next great
+              adventure.
+            </p>
+            <h3> Our Mission </h3>
+            <p>
+               We believe that every trip is an opportunity to create
+              lasting memories, and the vehicle you choose should enhance your
+              experience, not hinder it. Our mission is to provide you with the
+              perfect vehicle to match your unique journey. Whether you're
+              embarking on a weekend getaway, a cross-country road trip, or a
+              family vacation, we have the right car to suit your needs.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+export default About;
