@@ -60,6 +60,11 @@ const ProductInfo = () => {
     });
   };
 
+  const handleClick = () => {
+
+    console.log('Button clicked!');
+  };
+
 
   const centerTextStyles = {
     textAlign: 'center',
@@ -76,7 +81,8 @@ const ProductInfo = () => {
               style={{ cursor: 'pointer', marginRight: '20px', width: '225px' }}
             />
             {selectedVehicle === vehicle.id && (
-              <div><p>Year: {vehicle.year}</p><p>Price per day: ${vehicle.price}</p><p>Availability: {vehicle.availability ? 'Available' : 'Not available'}</p><button>Book Now!</button></div>
+              <div><p>Year: {vehicle.year}</p><p>Price per day: ${vehicle.price}</p><p>Availability: {vehicle.availability ? 'Available' : 'Not available'}</p>
+              <button onClick={handleClick}>Book Now!</button></div>
             )}
           </div><hr /></div>
       ))}
