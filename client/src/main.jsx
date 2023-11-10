@@ -7,7 +7,7 @@ import Home from './pages/Home';
 
 import LocationPage from './pages/location';
 import Signup from './pages/Signup.jsx';
-import Login from './pages/Login';
+import Login from './pages/Login.jsx';
 
 // import About from './pages/About.jsx';
 // import Product from './pages/Product.jsx';
@@ -49,8 +49,9 @@ const router = createBrowserRouter([
       //     element: <Cart />
       // }
 
+
     ]
-  },
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(

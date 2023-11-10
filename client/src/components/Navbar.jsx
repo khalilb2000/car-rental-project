@@ -32,11 +32,11 @@ export default function AppNavbar() {
 
           <Offcanvas.Body>
           <Nav className="justify-content-end flex-grow-1 pe-3">
+          <Nav.Link as={Link} to="/" className="link" activeClassName="active">
+              Home
+            </Nav.Link>
             <Nav.Link as={Link} to="/about" className="link" activeClassName="active">
               About
-            </Nav.Link>
-            <Nav.Link as={Link} to="/home" className="link" activeClassName="active">
-              Home
             </Nav.Link>
             <Nav.Link as={Link} to="/contact" className="link" activeClassName="active">
               Contact us

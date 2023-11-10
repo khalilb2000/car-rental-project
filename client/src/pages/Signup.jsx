@@ -5,7 +5,7 @@ import Auth from '../utils/auth';
 import { ADD_USER } from '../utils/mutations';
 import {Form, Button, Alert} from 'react-bootstrap'
 
-function Signup(props) {
+function Signup() {
   const [formState, setFormState] = useState({ email: '', password: '' });
   const [addUser] = useMutation(ADD_USER);
 
@@ -56,7 +56,7 @@ function Signup(props) {
             id="lastName"
             onChange={handleChange}
           />
-        </Form.Group > 
+        </Form.Group >
         <Form.Group className="flex-row space-between my-2">
           <Form.Label htmlFor="email">Email:</Form.Label>
           <Form.Control
