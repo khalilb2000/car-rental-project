@@ -21,12 +21,12 @@ const Home = () => {
           as we offer a fleet of top-notch vehicles to suit every traveler's needs. Whether you're craving the thrill of
           the open road or seeking the perfect ride for a weekend getaway, we've got you covered. Your dream ride awaits—unleash the road, embrace the freedom.
         </p>
-        <Container className='d-grid gap-2 d-md-flex justify-content-md-start'>
+          <button className='d-grid gap-2 d-md-flex justify-content-md-start'></button>
           <button className="btn btn-primary btn-lg px-4 me-md-2">Book Ride</button>
           <button className="btn btn-outline-secondary btn-lg px-4">Learn More</button>
         </Container>
       </Container>
-    </Container>
+    
     </>
   );
 }

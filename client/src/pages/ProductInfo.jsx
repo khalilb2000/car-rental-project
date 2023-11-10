@@ -1,65 +1,87 @@
-// import { Navigate, useParams } from 'react-router-dom';
-// import { useQuery } from '@apollo/client';
+// // import { Navigate, useParams } from 'react-router-dom';
+// // import { useQuery } from '@apollo/client';
 
-// // import ThoughtForm from '../components/ThoughtForm';
-// // import ThoughtList from '../components/ThoughtList';
+// // import { QUERY_USER, QUERY_ME } from '../utils/queries';
 
-// import { QUERY_USER, QUERY_ME } from '../utils/queries';
+// // import Auth from '../utils/auth';
 
-// import Auth from '../utils/auth';
+import { useState } from 'react';
 
-// const Profile = () => {
-//   const { username: userParam } = useParams();
 
-//   const { loading, data } = useQuery(userParam ? QUERY_USER : QUERY_ME, {
-//     variables: { username: userParam },
-//   });
+const ProductInfo = () => {
+  const vehicles = [
+    {
+      id: 1,
+      brand: 'Toyota',
+      model: 'Camry',
+      year: 2023,
+      price: 30,
+      availability: true,
+      image: '../src/img/toyota-camry.png',
+    },
+    {
+      id: 2,
+      brand: 'Ford',
+      model: 'F-150',
+      year: 2021,
+      price: 50,
+      availability: true,
+      image: '../src/img/ford-f150.png',
+    },
+    {
+      id: 3,
+      brand: 'Chrysler',
+      model: 'Pacifica',
+      year: 2022,
+      price: 65,
+      availability: true,
+      image: '../src/img/chrysler-pacifica.png',
+    },
+    {
+      id: 4,
+      brand: 'Lamborghini',
+      model: 'Huracan Tecnica',
+      year: 2023,
+      price: 200,
+      availability: false,
+      image: '../src/img/huracan-tecnica.png',
+    },
+  ];
 
-//   const user = data?.me || data?.user || {};
-//   // navigate to personal profile page if username is yours
-//   if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
-//     return <Navigate to="/me" />;
-//   }
+  const [selectedVehicle, setSelectedVehicle] = useState(null);
 
-//   if (loading) {
-//     return <div>Loading...</div>;
-//   }
+  const handleImageClick = (vehicle) => {
+    setSelectedVehicle((prevSelectedVehicle) => {
+      if (prevSelectedVehicle === vehicle.id) {
+        return null;
+      } else {
+        return vehicle.id;
+      }
+    });
+  };
 
-//   if (!user?.username) {
-//     return (
-//       <h4>
-//         You need to be logged in to see this. Use the navigation links above to
-//         sign up or log in!
-//       </h4>
-//     );
-//   }
 
-//   return (
-//     <div>
-//       <div className="flex-row justify-center mb-3">
-//         <h2 className="col-12 col-md-10 bg-dark text-light p-3 mb-5">
-//           Viewing {userParam ? `${user.username}'s` : 'your'} profile.
-//         </h2>
+  const centerTextStyles = {
+    textAlign: 'center',
+    margin: '0 auto'
+  }
 
-//         <div className="col-12 col-md-10 mb-5">
-//           <ThoughtList
-//             thoughts={user.thoughts}
-//             title={`${user.username}'s thoughts...`}
-//             showTitle={false}
-//             showUsername={false}
-//           />
-//         </div>
-//         {!userParam && (
-//           <div
-//             className="col-12 col-md-10 mb-3 p-3"
-//             style={{ border: '1px dotted #1a1a1a' }}
-//           >
-//             <ThoughtForm />
-//           </div>
-//         )}
-//       </div>
-//     </div>
-//   );
-// };
+  return (
+    <div><h1 style={centerTextStyles}>List of Available Vehicles</h1>
+      {vehicles.map((vehicle) => (
+        <div key={vehicle.id}><h2>{vehicle.brand} {vehicle.model}</h2><div style={{ display: 'flex' }}><img
+              src={vehicle.image}
+              alt={`${vehicle.brand} ${vehicle.model}`}
+              onClick={() => handleImageClick(vehicle)}
+              style={{ cursor: 'pointer', marginRight: '20px', width: '225px' }}
+            />
+            {selectedVehicle === vehicle.id && (
+              <div><p>Year: {vehicle.year}</p><p>Price per day: ${vehicle.price}</p><p>Availability: {vehicle.availability ? 'Available' : 'Not available'}</p><button>Book Now!</button></div>
+            )}
+          </div><hr /></div>
+      ))}
+    </div>
+  );
+};
 
-// export default Profile;
+export default ProductInfo;
