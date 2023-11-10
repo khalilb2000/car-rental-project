@@ -1,4 +1,5 @@
-
+import { Link } from 'react-router-dom'
+import { Button } from 'react-bootstrap'
 import { useState, useEffect } from 'react';
 import {
     GoogleMap,
@@ -48,9 +49,9 @@ const LocationPage = () => {
         }
     };
 
-    const handleGoToCars = (car) => {
-        setChooseCar(car);
-    }
+    // const handleGoToCars = (car) => {
+    //     setChooseCar(car);
+    // }
 
     const onMapClick = (event) => {
         setSelectedLocation({
@@ -167,9 +168,9 @@ const LocationPage = () => {
 
             <div>
                 <h3>Select Your Car Now</h3>
-                <button onClick={() => handleGoToCars('Car')}>Car</button>
+                <Link to="product-info"><Button> Pick Car </Button> </Link>
             </div>
-        </div>
+        </div >
     );
 };
 
