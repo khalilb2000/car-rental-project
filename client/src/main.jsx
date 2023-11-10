@@ -10,12 +10,6 @@ import Signup from './pages/Signup.jsx';
 import Login from './pages/Login.jsx';
 import ProductInfo from './pages/ProductInfo.jsx';
 
-
-// import About from './pages/About.jsx';
-// import Product from './pages/Product.jsx';
-// import Payment from './pages/Payment.jsx'
-// import Cart from './pages/Cart.jsx';
-
 const router = createBrowserRouter([
   {
     path: "/",
