@@ -1,9 +1,9 @@
 
 import { useState } from 'react';
-import {
-    GoogleMap,
-    useJsApiLoader,
-} from '@react-google-maps/api';
+// import {
+//     GoogleMap,
+//     useJsApiLoader,
+// } from '@React-google-maps/api';
 
 const LocationPage = () => {
     const [selectedLocation, setSelectedLocation] = useState(null);

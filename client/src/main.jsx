@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import App from './App.jsx';
 import Home from './pages/Home';
 
-import LocationPage from './pages/location'
+import Location from './pages/location'
 import Signup from './pages/Signup.jsx';
 import Login from './pages/Login';
 
@@ -22,14 +22,10 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Home />
-      },
-      {
-
+      },{
         path: '/location',
-        element: <LocationPage />
-      },
-
-
+        element: <Location />
+      },{
         path: '/login',
         element: <Login />
       },{

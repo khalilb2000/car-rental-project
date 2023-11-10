@@ -64,12 +64,15 @@ function Login () {
             onChange={handleChange}
           />
         </Form.Group >
-        <Button
+        <div className='flex-row flex-end'>
+          <Button type='submit'> Submit </Button>
+        </div>
+        {/* <Button
           disabled={!(formState.email && formState.password)}
           type="submit"
           variant="success">
           Submit
-        </Button>
+        </Button> */}
       </Form>
     </div>
   );
