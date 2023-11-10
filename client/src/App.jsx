@@ -8,6 +8,7 @@ import {
 import { setContext } from '@apollo/client/link/context';
 import { Outlet } from 'react-router-dom';
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 
 // import Footer from './components/Footer';
 
@@ -43,7 +44,7 @@ function App() {
         <div className="container">
           <Outlet />
         </div>
-        {/* <Footer /> */}
+        <Footer />
       </div>
      </ApolloProvider>
   );
