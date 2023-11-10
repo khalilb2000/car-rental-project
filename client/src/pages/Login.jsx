@@ -8,7 +8,7 @@ import { Form, Button, Alert } from 'react-bootstrap';
 function Login () {
   const [formState, setFormState] = useState({ email: '', password: '' });
   const [validated] = useState(false);
-  const [showAlert, setShowAlert] = useState(false);
+  // const [showAlert, setShowAlert] = useState(false);
   const [login] = useMutation(LOGIN_USER);
 
   const handleChange = (event) => {
@@ -37,11 +37,8 @@ function Login () {
   return (
     <div className="container my-1">
       <Link to="/signup">← Go to Signup</Link>
-
-
-
       <h2>Login</h2>
-      <Form onSubmit={handleFormSubmit}>
+      <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
         <Form.Group  className="flex-row space-between my-2">
           <Form.Label  htmlFor="email">Email address:</Form.Label >
           <Form.Control
@@ -50,19 +47,22 @@ function Login () {
             type="text"
             value={formState.email}
             onChange={handleChange}
+            required
           />
 
 
         </Form.Group >
         <Form.Group  className="flex-row space-between my-2">
-          <Form.Label  htmlFor="pwd">Password:</Form.Label >
+          <Form.Label  htmlFor="password">Password:</Form.Label >
           <Form.Control
             placeholder="******"
             name="password"
             type="text"
             value={formState.password}
             onChange={handleChange}
+            required
           />
+          <Form.Control.Feedback type='invalid'>Password is required!</Form.Control.Feedback>
         </Form.Group >
         <Button
           disabled={!(formState.email && formState.password)}
@@ -76,9 +76,3 @@ function Login () {
 }
 
 export default Login;
-
-
-{/* <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
-<Alert dismissible onClose={() => setShowAlert(false)} show={showAlert} variant="danger">
-  Something went wrong with your login credentials!
-</Alert> */}
