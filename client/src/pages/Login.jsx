@@ -33,12 +33,12 @@ function Login () {
     }
   };
 
-  
+
   return (
     <div className="container my-1">
       <Link to="/signup">← Go to Signup</Link>
 
-      
+
 
       <h2>Login</h2>
       <Form onSubmit={handleFormSubmit}>
@@ -51,8 +51,8 @@ function Login () {
             value={formState.email}
             onChange={handleChange}
           />
-       
-        
+
+
         </Form.Group >
         <Form.Group  className="flex-row space-between my-2">
           <Form.Label  htmlFor="pwd">Password:</Form.Label >
