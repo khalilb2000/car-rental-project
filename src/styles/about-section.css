@@ -1,0 +1,57 @@
+/* Set a charcoal background color for the section */
+.about__section {
+  background-color: #333; /* Charcoal color */
+  color: #ff0000; /* Red text color */
+}
+
+/* Set red color for headings */
+.about__section-content h2 {
+  color: #ff0000;
+}
+
+/* Set red color for icons in paragraphs */
+.about__section-item p i {
+  color: #ff0000;
+}
+
+/* Set red color for icons in the section description */
+.section__description i {
+  color: #ff0000 !important;
+}
+
+/* Set a charcoal background color for the section items */
+.about__section-item {
+  column-gap: 3rem;
+  background-color: #333; /* Charcoal color */
+  padding: 20px; /* Add padding for better visibility */
+}
+
+/* Set red color for text in paragraphs inside section items */
+.about__section-item p {
+  font-size: 0.6rem;
+  margin-bottom: 0;
+  color: #ff0000;
+}
+
+/* Adjust margin for smaller screens */
+@media only screen and (max-width: 992px) {
+  .about__section-item p {
+    font-size: 0.8rem;
+  }
+}
+
+/* Media query for smaller screens */
+@media only screen and (max-width: 768px) {
+  /* Adjust margin for .about__img */
+  .about__img {
+    margin-top: 30px;
+  }
+}
+
+/* Media query for even smaller screens */
+@media only screen and (max-width: 576px) {
+  /* Adjust margin for .about__section */
+  .about__section {
+    margin-top: 200px;
+  }
+}
