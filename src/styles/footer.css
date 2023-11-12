@@ -5,12 +5,12 @@
 }
 
 .footer__logo i {
-  color: #fff;
+  color: #ff0000;
   font-weight: 400;
 }
 
 .footer__logo span {
-  color: #fff;
+  color: #ff0000;
   font-weight: 500;
 }
 
@@ -45,18 +45,9 @@
   font-weight: 300;
 }
 
-.newsletter {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 8px 12px;
-  border: 1px solid #7c8a972f;
-  border-radius: 50px;
-  background: #020a4de9;
-}
 
 .footer__bottom {
-  border-top: 1px solid #7c8a972f;
+  border-top: 1px solid #333;
 }
 
 @media only screen and (max-width: 768px) {

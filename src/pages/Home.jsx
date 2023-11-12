@@ -8,8 +8,6 @@ import FindCarForm from "../components/UI/FindCarForm";
 import AboutSection from "../components/UI/AboutSection";
 import carData from "../assets/data/carData";
 import CarItem from "../components/UI/CarItem";
-import BecomeDriverSection from "../components/UI/BecomeDriverSection";
-import Testimonial from "../components/UI/Testimonial";
 
 
 
@@ -25,7 +23,7 @@ const Home = () => {
             <Row className="form__row">
               <Col lg="4" md="4">
                 <div className="find__cars-left">
-                  <h2>Find your best car here</h2>
+                  <h2>Find the car best for you now</h2>
                 </div>
               </Col>
 

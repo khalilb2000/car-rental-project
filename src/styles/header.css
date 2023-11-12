@@ -54,7 +54,7 @@
 
 .logo h1 a {
   text-decoration: none;
-  color: #000d6b;
+  color: #ff0000;
   font-weight: 700;
 }
 
@@ -75,6 +75,7 @@
 
 .header__location-content h6 {
   font-weight: 600;
+  color:#000;
 }
 
 .header__btn {

@@ -1,28 +1,28 @@
 /* Set a charcoal background color for the section */
 .about__section {
-  background-color: #333; /* Charcoal color */
-  color: #ff0000; /* Red text color */
+  background-color: #006400; /* Charcoal color */
+  color: #fff; /* Red text color */
 }
 
 /* Set red color for headings */
 .about__section-content h2 {
-  color: #ff0000;
+  color: #fff;
 }
 
 /* Set red color for icons in paragraphs */
 .about__section-item p i {
-  color: #ff0000;
+  color: #fff;
 }
 
 /* Set red color for icons in the section description */
 .section__description i {
-  color: #ff0000 !important;
+  color: #006400 !important;
 }
 
 /* Set a charcoal background color for the section items */
 .about__section-item {
   column-gap: 3rem;
-  background-color: #333; /* Charcoal color */
+  background-color: #006400; /* Charcoal color */
   padding: 20px; /* Add padding for better visibility */
 }
 
@@ -30,7 +30,7 @@
 .about__section-item p {
   font-size: 0.6rem;
   margin-bottom: 0;
-  color: #ff0000;
+  color: #fff;
 }
 
 /* Adjust margin for smaller screens */
