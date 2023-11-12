@@ -9,7 +9,7 @@ import ava03 from "../../assets/all-images/ava-3.jpg";
 const OUR__MEMBERS = [
   {
     name: "Khalil Barry",
-    experience: "5 years of experience",
+    
     fbUrl: "#",
     instUrl: "#",
     twitUrl: "#",

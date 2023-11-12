@@ -55,17 +55,6 @@
   background: #020a4de9;
 }
 
-.newsletter input {
-  background: transparent;
-  color: #fff;
-  border: none;
-  outline: none;
-}
-
-.newsletter span i {
-  color: #fff;
-}
-
 .footer__bottom {
   border-top: 1px solid #7c8a972f;
 }
