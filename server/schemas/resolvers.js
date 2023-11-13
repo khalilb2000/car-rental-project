@@ -1,4 +1,4 @@
-const { User} = require('../models');
+const { User, Car} = require('../models');
 const { signToken, AuthenticationError } = require('../utils/auth');
 
 const resolvers = {
@@ -34,6 +34,29 @@ const resolvers = {
 
       return { token, user };
     },
+    addCar:async (parent, {carName, price, image },  context) => {
+      try {
+        const currentUser = await User.findById(context.user._id);
+
+        // Create a new car object
+        const newCar = {
+          carName,
+          price,
+          image,
+        };
+
+        // Add the new car to the user's savedCar array
+        currentUser.savedCar.push(newCar);
+
+        // Save the updated user
+        await currentUser.save();
+        return currentUser;
+      } catch (error) {
+        console.error("error adding car", error);
+        throw new Error ('could not add car')
+      }
+    },
+
   },
 };
 

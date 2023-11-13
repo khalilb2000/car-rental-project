@@ -5,6 +5,7 @@ import appleApp from '../img/appleApp.png';
 import androidApp from '../img/androidApp.png';
 import iphoneTest from '../img/iphoneTest.png';
 // import LocationPage from './location';
+import Auth from '../utils/auth';
 
 const style = {
   fullSize: {
@@ -20,8 +21,10 @@ const style = {
 
 }
 
-const Home = () => {
 
+
+const Home = () => {
+  const isLoggedIn = Auth.loggedIn();
 
   return (
     <>
@@ -41,7 +44,7 @@ const Home = () => {
             the open road or seeking the perfect ride for a weekend getaway, we've got you covered. Your dream ride awaits—unleash the road, embrace the freedom.
           </p>
           <Container button='btn btn-outline-secondary btn-lg px-4'>
-            <Link to="location"><Button className='btn btn-outline-secondary btn-lg px-4"'> Book Now </Button> </Link>
+            <Link to={isLoggedIn ? '/location' : '/login'}><Button className='btn btn-outline-primary btn-lg px-4"'> Book Now </Button> </Link>
             <Link to="about"><Button className='btn btn-outline-secondary btn-lg px-4"'> Learn More </Button> </Link>
           </Container>
         </Container>
