@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
-import { Button } from 'react-bootstrap'
+import { Container, Button, Form, Row, Col } from 'react-bootstrap';
+import ProgressBar from 'react-bootstrap/ProgressBar';
 import { useState, useEffect } from 'react';
 import {
     GoogleMap,
@@ -61,8 +62,9 @@ const LocationPage = () => {
     };
 
     const containerStyle = {
-        width: '400px',
-        height: '400px'
+        width: '25rem',
+        height: '25rem',
+        border: "5px solid gray"
     };
 
     const options = {
@@ -113,65 +115,143 @@ const LocationPage = () => {
     }, []);
 
     return (
-        <div>
-            <h2>Location Picker</h2>
+        <>
+            <Container className=''>
+                <h1>Step:1 </h1>
+                <ProgressBar animated now={33} />
+            </Container>
+            <Form as={Row} className="mb-5 mt-5">
+                <Col className="mb-3 col-lg-12 col-sm-2 m-2">
+                    <Form.Group as={Row} controlId="formGridLocation">
+                        <Form.Label>Pick-up location or Zip Code</Form.Label>
+                        <Form.Control
+                            type="text"
+                            placeholder="Enter location"
+                            name="pickupLocation"
+                            value={pickupLocation}
+                            onChange={handleInputChange}
+                        />
+                    </Form.Group>
 
-            <div>
-                <label>Pick-up location or Zip Code:</label>
-                <input
-                    type="text"
-                    name="pickupLocation"
-                    value={pickupLocation}
-                    onChange={handleInputChange}
-                />
-            </div>
+                    <Form.Group as={Row} controlId="formGridDate">
+                        <Form.Label>Pick-up date</Form.Label>
+                        <Form.Control
+                            type="date"
+                            name="pickupDate"
+                            value={pickupDate}
+                            onChange={handleInputChange}
+                        />
+                    </Form.Group>
 
-            <div>
-                <label>Pick-up date:</label>
-                <input
-                    type="date"
-                    name="pickupDate"
-                    value={pickupDate}
-                    onChange={handleInputChange}
-                />
-            </div>
+                    {/* <Form.Group as={Col} controlId="formGridTime">
+                    <Form.Label>Time</Form.Label>
+                    <Form.Control
+                        type="time"
+                        name="time"
+                        value={time}
+                        onChange={handleInputChange}
+                    />
+                </Form.Group> */}
 
-            <div>
-                <label>Time:</label>
-                <input
-                    type="time"
-                    name="time"
-                    value={time}
-                    onChange={handleInputChange}
-                />
-            </div>
+                    <Form.Group as={Row} controlId="formGridDropOffDate">
+                        <Form.Label>Drop-off date</Form.Label>
+                        <Form.Control
+                            type="date"
+                            name="dropOffDate"
+                            value={dropOffDate}
+                            onChange={handleInputChange}
+                        />
+                    </Form.Group>
+                </Col>
 
-            <div>
-                <label>Drop-off date:</label>
-                <input
-                    type="date"
-                    name="dropOffDate"
-                    value={dropOffDate}
-                    onChange={handleInputChange}
-                />
-            </div>
+                <Button variant="primary" type="submit" className='col-lg-2 m-4'>
+                    Submit
+                </Button>
+                </Form>
+                <div className="col-4 d-none d-md-block">
 
-            {isLoaded ? <GoogleMap
-                center={selectedLocation}
-                zoom={15}
-                onClick={onMapClick}
-                mapContainerStyle={containerStyle}
-            >
-                <Marker position={userLocation} />
-            </GoogleMap> : <></>
-            }
+                    {
+                        isLoaded ?
+                            <GoogleMap
+                                center={selectedLocation}
+                                zoom={15}
+                                onClick={onMapClick}
+                                mapContainerStyle={containerStyle}>
+                                <Marker position={userLocation} />
+                            </GoogleMap> : <></>
+}
+                </div>
 
-            <div>
-                <h3>Select Your Car Now</h3>
-                <Link to="product-info"><Button> Pick Car </Button> </Link>
-            </div>
-        </div >
+            {/* <h3>Select Your Car Now</h3> */}
+            <Link to="product-info"><Button>Next</Button> </Link>
+
+        </>
     );
 };
 
 export default LocationPage;
+
+{/* <>
+<Container className=''>
+    <h1>Step:1 </h1>
+    <ProgressBar animated now={33} />
+</Container>
+<div className='m-5'>
+    <h2>Choose a location</h2>
+
+    <div>
+        <label>Pick-up location or Zip Code:</label>
+        <input
+            type="text"
+            name="pickupLocation"
+            value={pickupLocation}
+            onChange={handleInputChange}
+        />
+    </div>
+
+    <div>
+        <label>Pick-up date:</label>
+        <input
+            type="date"
+            name="pickupDate"
+            value={pickupDate}
+            onChange={handleInputChange}
+        />
+    </div>
+
+    <div>
+        <label>Time:</label>
+        <input
+            type="time"
+            name="time"
+            value={time}
+            onChange={handleInputChange}
+        />
+    </div>
+
+    <div>
+        <label>Drop-off date:</label>
+        <input
+            type="date"
+            name="dropOffDate"
+            value={dropOffDate}
+            onChange={handleInputChange}
+        />
+    </div>
+
+    {isLoaded ? <GoogleMap
+        center={selectedLocation}
+        zoom={15}
+        onClick={onMapClick}
+        mapContainerStyle={containerStyle}
+    >
+        <Marker position={userLocation} />
+    </GoogleMap> : <></>
+    }
+
+    <div>
+        <h3>Select Your Car Now</h3>
+        <Link to="product-info"><Button> Pick Car </Button> </Link>
+    </div>
+</div >
+</> */}
