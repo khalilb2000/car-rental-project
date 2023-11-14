@@ -23,7 +23,6 @@ const LocationPage = () => {
     const [pickupDate, setPickupDate] = useState('');
     const [time, setTime] = useState('');
     const [dropOffDate, setDropOffDate] = useState('');
-    const [setChooseCar] = useState(null);
 
     const { isLoaded } = useJsApiLoader({
         id: 'google-map-script',
@@ -50,9 +49,6 @@ const LocationPage = () => {
         }
     };
 
-    // const handleGoToCars = (car) => {
-    //     setChooseCar(car);
-    // }
 
     const onMapClick = (event) => {
         setSelectedLocation({
@@ -75,10 +71,10 @@ const LocationPage = () => {
 
     const success = (pos) => {
         const crd = pos.coords;
-        console.log("Your current position is:");
-        console.log(`Latitude : ${crd.latitude}`);
-        console.log(`Longitude: ${crd.longitude}`);
-        console.log(`More or less ${crd.accuracy} meters.`);
+        // console.log("Your current position is:");
+        // console.log(`Latitude : ${crd.latitude}`);
+        // console.log(`Longitude: ${crd.longitude}`);
+        // console.log(`More or less ${crd.accuracy} meters.`);
         const coords = {
             lat: crd.latitude,
             lng: crd.longitude,
@@ -114,13 +110,27 @@ const LocationPage = () => {
         }
     }, []);
 
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log('button clicked');
+        [pickupLocation, setPickupLocation];
+        console.log(pickupLocation);
+        [pickupDate, setPickupDate];
+        console.log(pickupDate);
+        [dropOffDate, setDropOffDate];
+        console.log(dropOffDate);
+        const userInfo = [pickupLocation, pickupDate, dropOffDate]
+    };
+
+
     return (
         <>
             <Container className=''>
                 <h1>Step:1 </h1>
                 <ProgressBar animated now={33} />
             </Container>
-            <Form as={Row} className="mb-5 mt-5">
+            <Form onSubmit={handleSubmit} as={Row} className="mb-5 mt-5">
                 <Col className="mb-3 col-lg-12 col-sm-2 m-2">
                     <Form.Group as={Row} controlId="formGridLocation">
                         <Form.Label>Pick-up location or Zip Code</Form.Label>
@@ -164,23 +174,23 @@ const LocationPage = () => {
                     </Form.Group>
                 </Col>
 
-                <Button variant="primary" type="submit" className='col-lg-2 m-4'>
+                <Button onClick={handleSubmit} variant="primary" type="submit" className='col-lg-2 m-4'>
                     Submit
                 </Button>
-                </Form>
-                <div className="col-4 d-none d-md-block">
+            </Form>
+            <div className="col-4 d-none d-md-block">
 
-                    {
-                        isLoaded ?
-                            <GoogleMap
-                                center={selectedLocation}
-                                zoom={15}
-                                onClick={onMapClick}
-                                mapContainerStyle={containerStyle}>
-                                <Marker position={userLocation} />
-                            </GoogleMap> : <></>
-}
-                </div>
+                {
+                    isLoaded ?
+                        <GoogleMap
+                            center={selectedLocation}
+                            zoom={15}
+                            onClick={onMapClick}
+                            mapContainerStyle={containerStyle}>
+                            <Marker position={userLocation} />
+                        </GoogleMap> : <></>
+                }
+            </div>
 
             {/* <h3>Select Your Car Now</h3> */}
             <Link to="product-info"><Button>Next</Button> </Link>
