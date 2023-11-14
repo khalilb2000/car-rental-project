@@ -1,4 +1,6 @@
-function contact() {
+
+function Contact() {
+  
     return (
       <section>
         <div className="container">
@@ -6,22 +8,20 @@ function contact() {
             <div className="col-md-12">
               <h2>Project </h2>
               <p>
-                if you liked our project and would like to get in touch with the group members 
-                .
+                if you liked our project, want to checkout more of our projects, would like to get in touch with us our information is below. Thank you
               </p>
               <h3> Contact Info </h3>
-              <p>
-                 We believe that every trip is an opportunity to create
-                lasting memories, and the vehicle you choose should enhance your
-                experience, not hinder it. Our mission is to provide you with the
-                perfect vehicle to match your unique journey. Whether you're
-                embarking on a weekend getaway, a cross-country road trip, or a
-                family vacation, we have the right car to suit your needs.
-              </p>
+                <ul>
+                <ol> Daniel Zarate - <a href="https://github.com/Ch40s1 "> Github / </a> <a href="malto:zaratedaniel67@gmail.com"> Email </a> </ol>
+                  <ol> Elizabeth Weatherby - <a href="https://github.com/Elizabethweatherby"> Github / </a> <a href="malto:elizabethwarren2792@gmail.com"> Email </a> </ol>
+                  <ol> Faysia Lopez - <a href="https://github.com/faysia1"> Github / </a> <a href="malto:faysialopez3@gmail.com"> Email </a> </ol>
+                  <ol> Joshua James - <a href="https://github.com/JIF945"> Github / </a> <a href="malto:joshua.james918@gmail.com"> Email </a> </ol>
+                  <ol> Khalil B - <a href="https://github.com/khalilb2000"> Github / </a> <a href="malto:khalilb2000@gmail.com "> Email </a> </ol>
+                </ul>
             </div>
           </div>
         </div>
       </section>
     );
   }
-  export default contact;
+  export default Contact;
