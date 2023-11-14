@@ -5,9 +5,6 @@
 
 // // import Auth from '../utils/auth';
 
-import { useState } from 'react';
-
-
 const ProductInfo = () => {
   const vehicles = [
     {
@@ -70,15 +67,15 @@ const ProductInfo = () => {
     <div><h1 style={centerTextStyles}>List of Available Vehicles</h1>
       {vehicles.map((vehicle) => (
         <div key={vehicle.id}><h2>{vehicle.brand} {vehicle.model}</h2><div style={{ display: 'flex' }}><img
-              src={vehicle.image}
-              alt={`${vehicle.brand} ${vehicle.model}`}
-              onClick={() => handleImageClick(vehicle)}
-              style={{ cursor: 'pointer', marginRight: '20px', width: '225px' }}
-            />
-            {selectedVehicle === vehicle.id && (
-              <div><p>Year: {vehicle.year}</p><p>Price per day: ${vehicle.price}</p><p>Availability: {vehicle.availability ? 'Available' : 'Not available'}</p><button>Book Now!</button></div>
-            )}
-          </div><hr /></div>
+          src={vehicle.image}
+          alt={`${vehicle.brand} ${vehicle.model}`}
+          onClick={() => handleImageClick(vehicle)}
+          style={{ cursor: 'pointer', marginRight: '20px', width: '225px' }}
+        />
+          {selectedVehicle === vehicle.id && (
+            <div><p>Year: {vehicle.year}</p><p>Price per day: ${vehicle.price}</p><p>Availability: {vehicle.availability ? 'Available' : 'Not available'}</p><button>Book Now!</button></div>
+          )}
+        </div><hr /></div>
       ))}
     </div>
   );
