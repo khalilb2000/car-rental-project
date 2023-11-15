@@ -3,6 +3,7 @@ import { Form, Button, Alert } from 'react-bootstrap';
 import { useMutation } from '@apollo/client';
 import Auth from '../utils/auth';
 import { ADD_USER } from '../utils/mutations';
+import { Link } from 'react-router-dom';
 
 const SignupForm = () => {
   // set initial form state
@@ -44,7 +45,10 @@ const SignupForm = () => {
   return (
     <>
       {/* This is needed for the validation functionality above */}
-      <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
+      <div className='container'>
+      <Link to="/login">← Go to Login</Link>
+      <h2>Sign up</h2>
+      <Form noValidate validated={validated} onSubmit={handleFormSubmit} className="mb-3 col-lg-8 col-md-12 col-sm-12 m-2">
         {/* show alert if server response is bad */}
         <Alert dismissible onClose={() => setShowAlert(false)} show={showAlert} variant='danger'>
           Something went wrong with your signup!
@@ -95,6 +99,7 @@ const SignupForm = () => {
           Submit
         </Button>
       </Form>
+      </div>
     </>
   );
 };

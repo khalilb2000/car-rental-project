@@ -11,6 +11,7 @@ import Login from './pages/Login.jsx';
 import ProductInfo from './pages/ProductInfo.jsx';
 import About from './pages/About.jsx';
 import Contact from './pages/Contact.jsx';
+import Finish from './pages/Finish.jsx'
 // import Payment from './pages/Payment.jsx'
 // import Cart from './pages/Cart.jsx';
 
@@ -29,7 +30,7 @@ const router = createBrowserRouter([
         element: <LocationPage />
       },
       {
-        path: '/location/product-info',
+        path: '/product-info',
         element: <ProductInfo />,
       },
       {
@@ -45,10 +46,11 @@ const router = createBrowserRouter([
        }, {
           path: '/Contact',
           element: <Contact />
-        }, 
-      //     path: '/Payment',
-      //     element: <Payment />
-      //   }, {
+        },
+        {
+          path: '/finish',
+          element: <Finish />
+        },
       //     path: '/Cart',
       //     element: <Cart />
       // }

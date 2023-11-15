@@ -35,7 +35,7 @@ function Login () {
 
 
   return (
-    <div className="container my-1">
+    <div className="container my-1 mb-3 col-lg-8 col-md-12 col-sm-12 m-2">
       <Link to="/signup">← Go to Signup</Link>
       <h2>Login</h2>
       <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
