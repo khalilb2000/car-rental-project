@@ -14,4 +14,4 @@ I am provided with clear and detailed images of each vehicle.
 After I have made my selections I able to proceed to the payment portal.
 Ny card information is securely processed and stored.
 
-Link to deployed application: https://wheelsondemand-c6dc18fc0b0e.herokuapp.com/
+Link to deployed application: https://wheelsondemand-045ef1cbf89f.herokuapp.com/
