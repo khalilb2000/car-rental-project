@@ -13,9 +13,9 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "concurrently": "^8.2.0"
   },
   "dependencies": {
-    "apollo": "^2.34.0"
+    "apollo": "^2.34.0",
+    "concurrently": "^8.2.0"
   }
 }
