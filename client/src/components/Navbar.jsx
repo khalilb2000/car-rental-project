@@ -24,7 +24,7 @@ export default function AppNavbar() {
   return (
     <>
       <Navbar key={expand} expand={expand} >
-        <Container fluid>
+        <Container fluid className='mt-5 mr-5 ml-5'>
           <Navbar.Brand href="/">
             <img
               alt=""
