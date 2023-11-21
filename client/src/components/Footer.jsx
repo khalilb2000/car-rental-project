@@ -14,29 +14,33 @@ const Footer = () => {
       </div>
       <ul className="nav col-md-4 justify-content-end list-unstyled d-flex gap-4">
         <li>
-          <img
-            src={gitHub}
-            width="30"
-            height="30"
-            className="d-inline-block align-top"
-          />
+          <a href="https://github.com/Ch40s1 " target="blank">
+            <img
+              src={gitHub}
+              width="30"
+              height="30"
+              className="d-inline-block align-top"
+            />
+          </a>
         </li>
         <li >
-          <img
-            src={linkedIn}
-            width="30"
-            height="30"
-            className="d-inline-block align-top"
+          <a href="https://www.linkedin.com/in/daniel-zarate-66816113b/" target="blank">
+            <img
+              src={linkedIn}
+              width="30"
+              height="30"
+              className="d-inline-block align-top"
             />
+          </a>
         </li>
-        <li>
+        {/* <li>
           <img
             src={stackOverFlow}
             width="30"
             height="30"
             className="d-inline-block align-top"
           />
-        </li>
+        </li> */}
       </ul>
     </footer>
   );

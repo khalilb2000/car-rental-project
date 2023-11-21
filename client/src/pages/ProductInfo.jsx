@@ -1,5 +1,10 @@
 // // import { Navigate, useParams } from 'react-router-dom';
 // // import { useQuery } from '@apollo/client';
+import chrysler from '../img/chrysler-pacifica.png'
+import ford from '../img/ford-f150.png'
+import huracan from  '../img/huracan-tecnica.png'
+import toyota from '../img/toyota-camry.png'
+
 import { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom'
@@ -23,7 +28,7 @@ const ProductInfo = (props) => {
       year: 2023,
       price: 30,
       availability: true,
-      image: '../src/img/toyota-camry.png',
+      image: toyota,
     },
     {
       id: 2,
@@ -32,7 +37,7 @@ const ProductInfo = (props) => {
       year: 2021,
       price: 50,
       availability: true,
-      image: '../src/img/ford-f150.png',
+      image: ford,
     },
     {
       id: 3,
@@ -41,7 +46,7 @@ const ProductInfo = (props) => {
       year: 2022,
       price: 65,
       availability: true,
-      image: '../src/img/chrysler-pacifica.png',
+      image: chrysler,
     },
     {
       id: 4,
@@ -50,7 +55,7 @@ const ProductInfo = (props) => {
       year: 2023,
       price: 200,
       availability: false,
-      image: '../src/img/huracan-tecnica.png',
+      image: huracan,
     },
   ];
 
