@@ -1,12 +1,12 @@
-import heroCar from '../img/maincar.png'
-import { Container, Button } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-import appleApp from '../img/appleApp.png';
-import androidApp from '../img/androidApp.png';
-import iphoneTest from '../img/iphoneTest.png';
-import Banner from '../img/Banner.png'
+// import heroCar from '../img/maincar.png'
+import {Button, Form} from 'react-bootstrap';
+import heroCar from '../img/carimage.png'
+// import { Link } from 'react-router-dom';
+// import appleApp from '../img/appleApp.png';
+// import androidApp from '../img/androidApp.png';
+// import iphoneTest from '../img/iphoneTest.png';
 // import LocationPage from './location';
-import Auth from '../utils/auth';
+// import Auth from '../utils/auth';
 
 const style = {
   fullSize: {
@@ -18,15 +18,26 @@ const style = {
   letteStyle: {
     fontSize: '4.5rem',
   },
-  bannerStyle: {
-    position: 'absolute', // Set position to absolute
-    top: '-15rem',
-    left: '11rem',
-    zIndex: '-1', // Set z-index to -1 to place it behind other elements
-    width: '100%',
+  heroConatiner: {
+    minHeight: '800px',
+    backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${heroCar})`,
+    backgroundSize: 'cover',
+    position: 'relative',
+    zIndex: 1,
+    alt: 'Car driving',
+
   },
-  importantBtn: {
-    backgroundColor: 'red'
+  formContainer: {
+    minHeight: '100px',
+  },
+  formGreeting:{
+    marginLeft:'4rem'
+  },
+  whiteText: {
+    color: 'white'
+  },
+  whiteConatiner:{
+    backgroundColor: 'white'
   }
 
 }
@@ -34,34 +45,64 @@ const style = {
 
 
 const Home = () => {
-  const isLoggedIn = Auth.loggedIn();
+  // const isLoggedIn = Auth.loggedIn();
 
   return (
     <>
-      <Container className="row flex-lg-row-reverse align-items-center g-5 py-5 mb-5 vh-100">
-        <Container className='d-none d-lg-block col-10 col-sm-8 col-lg-6'>
-          <img
-            className=''
-            src={heroCar}
-            width={700}
-            height={500}
-          />
-        </Container>
+      <div className="d-flex flex-column align-items-center col-12 justify-center" style={style.heroConatiner}>
 
-        <Container className='col-lg-6'>
-          <h1 className='display-5 fw-bold lh-1 mb-3'>Plan your trip now! SAVE with our car rental</h1>
-          <p> Our car rental services redefine the way you explore the world. Drive into adventure with confidence,
-            as we offer a fleet of top-notch vehicles to suit every traveler's needs. Whether you're craving the thrill of
-            the open road or seeking the perfect ride for a weekend getaway, we've got you covered. Your dream ride awaits—unleash the road, embrace the freedom.
-          </p>
-          <Container button='btn btn-outline-secondary btn-lg px-4'>
-            <Link to={isLoggedIn ? '/location' : '/login'}><Button className='btn btn-outline-primary btn-lg px-4"' style={style.importantBtn}> Book Now </Button> </Link>
-            <Link to="about"><Button className='btn btn-outline-secondary btn-lg px-4"'> Learn More </Button> </Link>
-          </Container>
-        </Container>
-      </Container>
+        <div className='d-flex justify-content-start col-10' style={style.whiteText}>
+          <h1>WheelsToGo</h1>
+        </div>
+        <div className='border px-2 rounded col-10' style={style.whiteConatiner}>
+          <div className='' style={style.formGreeting}>
+            {/* this is where the view/edit/  buttons will go  */}
+            <h3>Hello</h3>
+          </div>
+          <div className='d-flex align-items-center mb-5' style={style.formContainer}>
+            <Form className="d-flex justify-content-around">
+              <Form.Group controlId="formGridLocation" className='col-3'>
+                <Form.Label>Pick-up Location</Form.Label>
+                <Form.Control
+                  type="text"
+                  placeholder="Enter location"
+                  name="pickUpLocation"
+                />
+              </Form.Group>
 
-      <Container className='col-12 d-column align-items-center mb-5 ' style={style.fullSize}>
+              <Form.Group controlId="formGridDate">
+                <Form.Label>Pick-up Date</Form.Label>
+                <Form.Control
+                  type="date"
+                  name="pickupDate"
+                />
+              </Form.Group>
+
+              <Form.Group controlId="formGridTime">
+                <Form.Label>Pick-up Time</Form.Label>
+                <Form.Control
+                  type="text"
+                  placeholder="02:00 PM"
+                  name="pickUpTime"
+                />
+              </Form.Group>
+
+              <Form.Group controlId="formGridDropOffDate">
+                <Form.Label>Drop-off date</Form.Label>
+                <Form.Control
+                  type="date"
+                  name="dropOffDate"
+                />
+              </Form.Group>
+              <Button>Submit</Button>
+            </Form>
+          </div>
+
+        </div>
+
+      </div>
+
+      {/* <Container className='col-12 d-column align-items-center mb-5 ' style={style.fullSize}>
         <Container className='text-center p-5 fs-1'>
           <h1 className='fw-bold' style={style.letteStyle}>Save big with our rental cars!</h1>
         </Container>
@@ -96,7 +137,7 @@ const Home = () => {
             src={iphoneTest}
           />
         </Container>
-      </Container>
+      </Container> */}
 
     </>
   );
