@@ -45,7 +45,7 @@ function App() {
       </div>
 
 
-      <div className="vw-100 d-flex flex-column align-items-center">
+      <div className="vw-100 d-flex align-items-center justify-center">
         <Outlet />
       </div>
 
