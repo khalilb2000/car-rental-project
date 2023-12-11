@@ -4,8 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 
 import App from './App.jsx';
 import Home from './pages/Home';
-
-import LocationPage from './pages/location';
+// import LocationPage from './pages/location';
 import Signup from './pages/Signup.jsx';
 import Login from './pages/Login.jsx';
 import ProductInfo from './pages/ProductInfo.jsx';
@@ -24,11 +23,11 @@ const router = createBrowserRouter([
         index: true,
         element: <Home />
       },
-      {
+      // {
 
-        path: '/location',
-        element: <LocationPage />
-      },
+      //   path: '/location',
+      //   element: <LocationPage />
+      // },
       {
         path: '/product-info',
         element: <ProductInfo />,

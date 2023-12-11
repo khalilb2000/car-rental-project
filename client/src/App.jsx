@@ -1,4 +1,5 @@
 import './App.css';
+import '../src/index.css'
 import {
   ApolloClient,
   InMemoryCache,
@@ -36,20 +37,21 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
+const styles = {
+  borderStyle:{
+    borderBottom: 'solid 5px #BA5236',
+  }
+}
+
 function App() {
   return (
     <ApolloProvider client={client}>
-
-      <div className="flex-column justify-flex-start mx-5">
-        <Navbar />
+      <div className="flex-column justify-flex-start"  style={styles.borderStyle}>
+        <Navbar/>
       </div>
-
-
       <div className="vw-100 d-flex align-items-center justify-center">
         <Outlet />
       </div>
-
-
       <div>
         <Footer />
       </div>
