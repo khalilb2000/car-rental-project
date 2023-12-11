@@ -7,11 +7,16 @@ import { useQuery, useMutation } from '@apollo/client';
 
 
 const styles = {
-  importantButtons: {
-    background: 'red',
-    color: 'white',
-    borderRadius: "8px"
+  border: {
+  },
+  logoSize: {
+    fontSize: '2rem',
+    fontFamily: 'Roboto Condensed'
+  },
+  fontColor: {
+    color: "black"
   }
+
 }
 
 
@@ -23,9 +28,9 @@ export default function AppNavbar() {
 
   return (
     <>
-      <Navbar key={expand} expand={expand} >
-        <Container fluid className='mt-5 mr-5 ml-5'>
-          <Navbar.Brand href="/">
+      <Navbar key={expand} expand={expand} style={styles.border}>
+        <Container fluid className=' mr-5 ml-5'>
+          {/* <Navbar.Brand href="/">
             <img
               alt=""
               src={carSVG}
@@ -33,6 +38,16 @@ export default function AppNavbar() {
               height="30"
               className="d-inline-block align-top"
             />{' '}
+            WheelsOnDemand
+          </Navbar.Brand> */}
+          <Navbar.Brand href="/" style={styles.logoSize}>
+            {/* <img
+              alt=""
+              src={carSVG}
+              width="30"
+              height="30"
+              className="d-inline-block align-top"
+            /> */}
             WheelsOnDemand
           </Navbar.Brand>
           <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
@@ -49,7 +64,7 @@ export default function AppNavbar() {
 
             <Offcanvas.Body>
               <Nav className="justify-content-end flex-grow-1 pe-3">
-                <Nav.Link as={Link} to="/" className="link " activeClassName="active">
+                <Nav.Link as={Link} to="/" className="link ">
                   Home
                 </Nav.Link>
                 <Nav.Link as={Link} to="/contact" className="link" activeClassName="active">
@@ -66,7 +81,7 @@ export default function AppNavbar() {
                     </div>
                   </>
                 ) : (
-                  <Nav.Link as={Link} to="/login" className="link" activeClassName="active" style={styles.importantButtons}>
+                  <Nav.Link as={Link} to="/login" className="link" activeClassName="active">
                     Login/Sign up
                   </Nav.Link>
                 )}
