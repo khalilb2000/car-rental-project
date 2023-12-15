@@ -1,8 +1,12 @@
 import chrysler from '../img/chrysler-pacifica.png'
 import ford from '../img/ford-f150.png'
-import huracan from  '../img/huracan-tecnica.png'
+import huracan from '../img/huracan-tecnica.png'
 import toyota from '../img/toyota-camry.png'
 import { Button, Container } from 'react-bootstrap';
+import Card from 'react-bootstrap/Card';
+import ProgressBar from 'react-bootstrap/ProgressBar';
+import { Link } from 'react-router-dom';
+
 
 const ProductInfo = () => {
   const vehicles = [
@@ -44,33 +48,53 @@ const ProductInfo = () => {
     },
   ];
 
-  const centerTextStyles = {
-    textAlign: 'center',
-    margin: '0 auto'
-  }
-
   return (
     <>
-      <Container>
-        <h1 style={centerTextStyles}>Select from our list of vehicles</h1>
-        <br/>
-        {vehicles.map((vehicle) => (
-          <Container key={vehicle.id}><h2>{vehicle.brand} {vehicle.model}</h2><Container style={{ display: 'flex' }}><img
-            src={vehicle.image}
-            alt={`${vehicle.brand} ${vehicle.model}`}
-            style={{ cursor: 'pointer', marginRight: '20px', width: '225px' }}
-          />
+      <div>
+        <div>
+          this will have progression
+          <ProgressBar now={25} />
+        </div>
+        <div>
+          <h1>Select from our list of vehicles</h1>
+        </div>
+        <div className='d-flex flex-wrap gap-5'>
+          {vehicles.map((vehicle) => (
+            <Card key={vehicle.id} className='col-3'>
               <Container>
-                <p>Year:{vehicle.year}</p>
-                <p>Price per day: ${vehicle.price}</p>
-                <p>Availability: {vehicle.availability ? 'Available' : 'Not available'}</p>
-                <Button>
-                  Book Now!
-                </Button>
-              </Container>
-          </Container><hr /></Container>
-        ))}
-      </Container>
+                <img
+                  src={vehicle.image}
+                  alt={`${vehicle.brand} ${vehicle.model}`}
+                  style={{ cursor: 'pointer', marginRight: '20px', width: '225px' }}
+                />
+                <Container>
+                  <h2>{vehicle.brand} {vehicle.model}</h2>
+                  <div>
+                    <icon>info btn</icon>
+                  </div>
+                  <div>
+                    <div>
+                      <p>$200</p>
+                      <Button>
+                        Book Now!
+                      </Button>
+                    </div>
+
+                    <div>
+                      <p>$300</p>
+                      <Button>
+                        Book Later!
+                      </Button>
+                    </div>
+
+                  </div>
+                </Container>
+              </Container><hr />
+            </Card>
+          ))}
+        </div>
+      </div>
+      <Link to="/Finish">to finish</Link>
     </>
   );
 };

@@ -4,15 +4,12 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 
 import App from './App.jsx';
 import Home from './pages/Home';
-// import LocationPage from './pages/location';
 import Signup from './pages/Signup.jsx';
 import Login from './pages/Login.jsx';
 import ProductInfo from './pages/ProductInfo.jsx';
 import About from './pages/About.jsx';
 import Contact from './pages/Contact.jsx';
 import Finish from './pages/Finish.jsx'
-// import Payment from './pages/Payment.jsx'
-// import Cart from './pages/Cart.jsx';
 
 const router = createBrowserRouter([
   {

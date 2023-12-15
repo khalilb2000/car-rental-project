@@ -1,10 +1,9 @@
-import { useLocation, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import ProgressBar from 'react-bootstrap/ProgressBar';
 import { Container, Button } from 'react-bootstrap';
 import Auth from '../utils/auth';
 import { useQuery } from '@apollo/client';
 import { GET_ME } from '../utils/queries';
-import { useNavigate } from 'react-router-dom'
 
 const style = {
   backDrop: {
@@ -13,10 +12,7 @@ const style = {
   }
 }
 
-const Finish = (props) => {
-  const navigate = useNavigate();
-  const location = useLocation();
-  const { zipCode, pickupDate, dropOffDate, selectedVehicle } = location.state;
+const Finish = () => {
   const { loading, error, data } = useQuery(GET_ME);
   const userData = data?.me || {};
 
@@ -57,18 +53,18 @@ const Finish = (props) => {
         <Container className='d-flex'>
 
           <Container>
-            <p><span className='fw-light'>Pick-up Date</span>:<br /> <span className='fs-3'>{pickupDate}</span></p>
-            <p><span className='w-light'>Zip Code</span>:<br /> <span className='fs-3'>{zipCode}</span></p>
+            <p><span className='fw-light'>Pick-up Date</span>:<br /> <span className='fs-3'></span></p>
+            <p><span className='w-light'>Zip Code</span>:<br /> <span className='fs-3'></span></p>
           </Container>
 
           <Container>
-            <p><span className='fw-light'>Drop-off Date</span>:<br /> <span className='fs-3'>{dropOffDate}</span></p>
+            <p><span className='fw-light'>Drop-off Date</span>:<br /> <span className='fs-3'></span></p>
           </Container>
 
         </Container>
 
         <Container style={style.backDrop} >
-          <p><span className='fw-light'>Selected Vehicle</span>: <br /> <span className='fs-3'>{selectedVehicle.brand} {selectedVehicle.model} </span></p>
+          <p><span className='fw-light'>Selected Vehicle</span>: <br /> <span className='fs-3'></span></p>
         </Container>
       </Container>
       <h1>Email with detail to {userData.email}</h1>

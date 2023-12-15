@@ -10,7 +10,7 @@ function About() {
               we're your trusted partner in adventure and exploration. Founded
               with a passion for travel and a commitment to making your journey
               exceptional and we're thrilled to be a part of your next great
-              adventure.
+             adventure.
             </p>
             <h3> Our Mission </h3>
             <p>
