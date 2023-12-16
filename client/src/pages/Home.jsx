@@ -1,6 +1,8 @@
 // import heroCar from '../img/maincar.png'
 import {Button, Form} from 'react-bootstrap';
 import heroCar from '../img/carimage.png'
+import greenRoad from '../img/greenRoad.png'
+import greenRoadWater from '../img/greenRoadWater.png'
 import { Link } from 'react-router-dom';
 // import { Link } from 'react-router-dom';
 // import appleApp from '../img/appleApp.png';
@@ -21,7 +23,7 @@ const style = {
   },
   heroConatiner: {
     minHeight: '800px',
-    backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${heroCar})`,
+    backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)), url(${greenRoadWater })`,
     backgroundSize: 'cover',
     position: 'relative',
     zIndex: 1,
@@ -41,7 +43,8 @@ const style = {
     backgroundColor: 'white'
   },
   accentBtn:{
-    backgroundColor: '#BA5236',
+    // backgroundColor: '#BA5236',
+    backgroundColor: 'rgb(0, 40, 95)',
     height: '4rem'
   },
   border: {

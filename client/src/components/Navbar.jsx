@@ -1,9 +1,8 @@
 import { Link } from 'react-router-dom';
-import { Navbar, Nav, Container, Offcanvas, Button, NavDropdown, Form } from 'react-bootstrap';
-import carSVG from '../img/car-solid.svg';
+import { Navbar, Nav, Container, Offcanvas} from 'react-bootstrap';
 import Auth from '../utils/auth';
 import { GET_ME } from '../utils/queries';
-import { useQuery, useMutation } from '@apollo/client';
+import { useQuery } from '@apollo/client';
 
 
 const styles = {
@@ -14,7 +13,11 @@ const styles = {
     fontFamily: 'Roboto Condensed'
   },
   fontColor: {
-    color: "black"
+    color: "rgb(247, 139, 0)"
+  },
+  secondaryContainer: {
+    backgroundColor: 'rgb(247, 139, 0)',
+    color: 'rgb(255, 255, 255)'
   }
 
 }
@@ -23,31 +26,14 @@ const styles = {
 export default function AppNavbar() {
   const expand = 'md';
 
-  const { loading, error, data } = useQuery(GET_ME);
+  const { data } = useQuery(GET_ME);
   const userData = data?.me || {};
 
   return (
     <>
       <Navbar key={expand} expand={expand} style={styles.border}>
         <Container fluid className=' mr-5 ml-5'>
-          {/* <Navbar.Brand href="/">
-            <img
-              alt=""
-              src={carSVG}
-              width="30"
-              height="30"
-              className="d-inline-block align-top"
-            />{' '}
-            WheelsOnDemand
-          </Navbar.Brand> */}
           <Navbar.Brand href="/" style={styles.logoSize}>
-            {/* <img
-              alt=""
-              src={carSVG}
-              width="30"
-              height="30"
-              className="d-inline-block align-top"
-            /> */}
             WheelsOnDemand
           </Navbar.Brand>
           <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
@@ -64,10 +50,10 @@ export default function AppNavbar() {
 
             <Offcanvas.Body>
               <Nav className="justify-content-end flex-grow-1 pe-3">
-                <Nav.Link as={Link} to="/" className="link ">
+                <Nav.Link as={Link} to="/" className="link " style={styles.fontColor}>
                   Home
                 </Nav.Link>
-                <Nav.Link as={Link} to="/contact" className="link" activeClassName="active">
+                <Nav.Link as={Link} to="/contact" className="link" activeClassName="active"  style={styles.fontColor}>
                   Contact us
                 </Nav.Link>
 
@@ -75,13 +61,13 @@ export default function AppNavbar() {
                   <>
                     <Nav.Item disabled className='d-flex align-items-center'>Hello, {userData.username}!</Nav.Item>
                     <div className=''>
-                      <Nav.Link as={Link} onClick={Auth.logout} to="/logout" className="link" activeClassName="active">
+                      <Nav.Link as={Link} onClick={Auth.logout} to="/logout" className="link" activeClassName="active"  style={styles.fontColor}>
                         Logout
                       </Nav.Link>
                     </div>
                   </>
                 ) : (
-                  <Nav.Link as={Link} to="/login" className="link" activeClassName="active">
+                  <Nav.Link as={Link} to="/login" className="link" activeClassName="active"  style={styles.fontColor}>
                     Login/Sign up
                   </Nav.Link>
                 )}
@@ -90,6 +76,17 @@ export default function AppNavbar() {
           </Navbar.Offcanvas>
         </Container>
       </Navbar>
+      <div className='d-flex justify-content-around'>
+        <div style={styles.secondaryContainer}>
+          <h4>Deals</h4>
+        </div>
+        <div style={styles.secondaryContainer}>
+          <h4>Cars & Services</h4>
+        </div>
+        <div style={styles.secondaryContainer}>
+          <h4>Locations</h4>
+        </div>
+      </div>
 
     </>
   )

@@ -39,14 +39,14 @@ const client = new ApolloClient({
 
 const styles = {
   borderStyle:{
-    borderBottom: 'solid 5px #BA5236',
+    borderBottom: 'solid 5px rgb(0, 40, 95)',
   }
 }
 
 function App() {
   return (
     <ApolloProvider client={client}>
-      <div className="flex-column justify-flex-start"  style={styles.borderStyle}>
+      <div className="justify-flex-start"  style={styles.borderStyle}>
         <Navbar/>
       </div>
       <div className="vw-100 d-flex align-items-center justify-center">
