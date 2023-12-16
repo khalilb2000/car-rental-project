@@ -8,6 +8,8 @@ import ProgressBar from 'react-bootstrap/ProgressBar';
 import { Link } from 'react-router-dom';
 
 
+const orange = "#f28d21,  rgb(255, 255, 255)/rgb(0, 40, 95)"
+
 const ProductInfo = () => {
   const vehicles = [
     {
@@ -58,7 +60,7 @@ const ProductInfo = () => {
         <div>
           <h1>Select from our list of vehicles</h1>
         </div>
-        <div className='d-flex flex-wrap gap-5'>
+        <div className='d-flex flex-wrap gap-5 justify-content-around'>
           {vehicles.map((vehicle) => (
             <Card key={vehicle.id} className='col-3'>
               <Container>
