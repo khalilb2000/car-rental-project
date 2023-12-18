@@ -1,13 +1,14 @@
 import { Button, Form } from 'react-bootstrap';
 import vw from '../img/vw.png'
 import { Link } from 'react-router-dom';
+import Card from 'react-bootstrap/Card';
 // import Auth from '../utils/auth';
 
 
 const style = {
   heroConatiner: {
     minHeight: '500px',
-    backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2)), url(${vw})`,
+    backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url(${vw})`,
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     position: 'relative',
@@ -32,10 +33,18 @@ const style = {
     height: '4rem'
   },
   border: {
-    border: 'solid 2px rgb(0, 40, 95)'
+    // border: 'solid 2px rgb(0, 40, 95)'
   },
   font: {
     fontFamily: 'Roboto, sans-seriff'
+  },
+  cardContainer: {
+    border: '1px solid #c3c3c3',
+    boxShadow: '0 1px 3px rgba(0,0,0,.2)',
+    height: '10rem',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center'
   }
 
 }
@@ -96,8 +105,16 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div>
-        {/* <CarSlider /> */}
+      <div className='w-100 d-flex justify-content-around mt-2'>
+        <Card style={style.cardContainer} className='col-3'>
+          <h1>current deals</h1>
+        </Card>
+        <Card style={style.cardContainer} className='col-3'>
+          <h1>points</h1>
+        </Card>
+        <Card style={style.cardContainer} className='col-3'>
+          <h1>travel planning</h1>
+        </Card>
       </div>
     </>
   );

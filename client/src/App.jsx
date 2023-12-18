@@ -38,6 +38,8 @@ const client = new ApolloClient({
 const styles = {
   borderStyle:{
     borderBottom: 'solid 5px rgb(0, 40, 95)',
+    // backgroundColor: '#FA7D16',
+    color: 'white'
   },
   font: {
     fontFamily: 'Roboto'
