@@ -1,19 +1,13 @@
-// import heroCar from '../img/maincar.png'
-import {Button, Form} from 'react-bootstrap';
+import { Button, Form } from 'react-bootstrap';
 import vw from '../img/vw.png'
 import { Link } from 'react-router-dom';
-// import { Link } from 'react-router-dom';
-// import appleApp from '../img/appleApp.png';
-// import androidApp from '../img/androidApp.png';
-// import iphoneTest from '../img/iphoneTest.png';
-// import LocationPage from './location';
 // import Auth from '../utils/auth';
 
 
 const style = {
   heroConatiner: {
     minHeight: '500px',
-    backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2)), url(${vw })`,
+    backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2)), url(${vw})`,
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     position: 'relative',
@@ -23,16 +17,16 @@ const style = {
   formContainer: {
     minHeight: '100px',
   },
-  formGreeting:{
-    marginLeft:'4rem'
+  formGreeting: {
+    marginLeft: '4rem'
   },
   whiteText: {
     color: 'white'
   },
-  whiteConatiner:{
+  whiteConatiner: {
     backgroundColor: 'white'
   },
-  accentBtn:{
+  accentBtn: {
     // backgroundColor: '#BA5236',
     backgroundColor: 'rgb(0, 40, 95)',
     height: '4rem'
@@ -100,11 +94,11 @@ const Home = () => {
               <Link to='/product-info'><Button style={style.accentBtn}>Submit</Button></Link>
             </Form>
           </div>
-
         </div>
-
       </div>
-
+      <div>
+        {/* <CarSlider /> */}
+      </div>
     </>
   );
 }

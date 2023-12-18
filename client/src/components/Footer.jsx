@@ -1,5 +1,5 @@
 import gitHub from '../img/github.svg';
-import stackOverFlow from '../img/stack-overflow.svg';
+// import stackOverFlow from '../img/stack-overflow.svg';
 import linkedIn from '../img/linkedin.svg';
 
 const Footer = () => {
