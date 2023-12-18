@@ -11,8 +11,6 @@ import { Outlet } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 
-// import Footer from './components/Footer';
-
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -52,7 +50,7 @@ function App() {
       <div className="justify-flex-start"  style={styles.borderStyle}>
         <Navbar/>
       </div>
-      <div className="vw-100 d-flex align-items-center justify-center" style={styles.font}>
+      <div className="vw-100 d-flex flex-column align-items-center justify-center" style={styles.font}>
         <Outlet />
       </div>
       <div>
