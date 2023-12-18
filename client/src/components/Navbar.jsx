@@ -17,8 +17,17 @@ const styles = {
   },
   secondaryContainer: {
     backgroundColor: 'rgb(247, 139, 0)',
-    color: 'rgb(255, 255, 255)'
+    color: 'rgb(255, 255, 255)',
+    border: '1px solid black',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: '1rem',
+  },
+  font: {
+    fontFamily: 'Roboto, sans-seriff'
   }
+
 
 }
 
@@ -76,15 +85,21 @@ export default function AppNavbar() {
           </Navbar.Offcanvas>
         </Container>
       </Navbar>
-      <div className='d-flex justify-content-around'>
-        <div style={styles.secondaryContainer}>
-          <h4>Deals</h4>
+      <div className='d-flex'>
+        <div className='col-4 ' style={styles.secondaryContainer}>
+          <h4 style={styles.font}>
+            Deals
+            </h4>
         </div>
-        <div style={styles.secondaryContainer}>
-          <h4>Cars & Services</h4>
+        <div className='col-4' style={styles.secondaryContainer}>
+          <h4 style={styles.font}>
+            Cars & Services
+            </h4>
         </div>
-        <div style={styles.secondaryContainer}>
-          <h4>Locations</h4>
+        <div className='col-4' style={styles.secondaryContainer}>
+          <h4 style={styles.font}>
+            Locations
+            </h4>
         </div>
       </div>
 
