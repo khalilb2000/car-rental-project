@@ -10,10 +10,14 @@ const styles = {
   },
   logoSize: {
     fontSize: '2rem',
-    fontFamily: 'Roboto Condensed'
+    fontFamily: 'Roboto Condensed',
+    // color: 'white'
   },
   fontColor: {
-    color: "rgb(247, 139, 0)"
+    // color: "rgb(247, 139, 0)",
+    color: 'black',
+    textDecoration: 'underline'
+    // color: 'white'
   },
   secondaryContainer: {
     backgroundColor: 'rgb(247, 139, 0)',
