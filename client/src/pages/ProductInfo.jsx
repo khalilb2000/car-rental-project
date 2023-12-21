@@ -1,7 +1,9 @@
-import chrysler from '../img/chrysler-pacifica.png'
-import ford from '../img/ford-f150.png'
-import huracan from '../img/huracan-tecnica.png'
-import toyota from '../img/toyota-camry.png'
+import chrysler from '../img/chrysler-pacifica.png';
+import ford from '../img/ford-f150.png';
+import huracan from '../img/huracan-tecnica.png';
+import toyota from '../img/toyota-camry.png';
+import Van from '../img/chevyVan.png';
+import Tesla from '../img/tesla.png'
 
 import { Button, Container, Card, ProgressBar } from 'react-bootstrap';
 import { useState } from 'react';
@@ -46,6 +48,24 @@ const ProductInfo = () => {
       availability: false,
       image: huracan,
     },
+    {
+      id: 5,
+      brand: "Chevy",
+      model: 'Express',
+      year: 2020,
+      price: 200,
+      availability: true,
+      image: Van,
+    },
+    {
+      id: 6,
+      brand: "Tesla",
+      model: 'Model S',
+      year: 2020,
+      price: 349,
+      availability: true,
+      image: Tesla,
+    }
   ];
 
 

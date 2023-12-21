@@ -43,7 +43,6 @@ const style = {
 
 const Home = () => {
   // const isLoggedIn = Auth.loggedIn();
-
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
@@ -70,6 +69,28 @@ const Home = () => {
   const handleOpenModal = () => {
     setShowModal(true);
   };
+
+  const generateTimeOptions = () => {
+    // make a option array that we can chooese from
+    const options = ["9:00 am", '10:00 am', '11:00 am', "12:00 pm", "1:00 pm", "2:00 pm", "3:00 pm", "4:00 pm ", "5:00 pm"];
+    // the options for the select input form need to be a array
+    const timeOptions = [];
+
+    // loop if i is less than the array length and add the value of the array index to the timeoptons array
+    for (let i = 0; i < options.length; i++) {
+      const formattedHour = `${options[i]}`;
+      // push the options into the array
+      timeOptions.push(
+        <option key={formattedHour} value={formattedHour}>
+          {formattedHour}
+        </option>
+      );
+    }
+
+    //return the array to the form
+    return timeOptions;
+  };
+
 
   return (
     <>
@@ -123,11 +144,14 @@ const Home = () => {
               <Form.Group controlId="formTime">
                 <Form.Label>Pick-up Time</Form.Label>
                 <Form.Control
-                  type="text"
-                  placeholder="02:00 PM"
+                  as="select"
                   name="pickUpTime"
-                  onChange={(e) => handleChange('pickUpTime', e.target.value)} />
+                  onChange={(e) => handleChange('pickUpTime', e.target.value)}>
+                  <option value="">Select time</option>
+                  {generateTimeOptions()} {/* Generate options from 9 AM to 5 PM */}
+                </Form.Control>
               </Form.Group>
+
 
               <Form.Group controlId="formDropOffDate">
                 <Form.Label>Drop-off date</Form.Label>
