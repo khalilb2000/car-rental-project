@@ -2,13 +2,11 @@ import chrysler from '../img/chrysler-pacifica.png'
 import ford from '../img/ford-f150.png'
 import huracan from '../img/huracan-tecnica.png'
 import toyota from '../img/toyota-camry.png'
-import { Button, Container } from 'react-bootstrap';
-import Card from 'react-bootstrap/Card';
-import ProgressBar from 'react-bootstrap/ProgressBar';
-import { Link } from 'react-router-dom';
 
-
-const orange = "#f28d21,  rgb(255, 255, 255)/rgb(0, 40, 95)"
+import { Button, Container, Card, ProgressBar } from 'react-bootstrap';
+import { useState } from 'react';
+import { useLocation, useNavigate, Link  } from 'react-router-dom';
+// import Home from './Home';
 
 const ProductInfo = () => {
   const vehicles = [
@@ -17,7 +15,7 @@ const ProductInfo = () => {
       brand: 'Toyota',
       model: 'Camry',
       year: 2023,
-      price: 30,
+      price: 200,
       availability: true,
       image: toyota,
     },
@@ -26,7 +24,7 @@ const ProductInfo = () => {
       brand: 'Ford',
       model: 'F-150',
       year: 2021,
-      price: 50,
+      price: 250,
       availability: true,
       image: ford,
     },
@@ -35,7 +33,7 @@ const ProductInfo = () => {
       brand: 'Chrysler',
       model: 'Pacifica',
       year: 2022,
-      price: 65,
+      price: 100,
       availability: true,
       image: chrysler,
     },
@@ -44,11 +42,15 @@ const ProductInfo = () => {
       brand: 'Lamborghini',
       model: 'Huracan Tecnica',
       year: 2023,
-      price: 200,
+      price: 1000,
       availability: false,
       image: huracan,
     },
   ];
+
+
+  const location = useLocation();
+  const { pickUpLocation, zipCode, pickUpTime, pickupDate, dropOffDate} = location.state;
 
   return (
     <>
@@ -56,6 +58,7 @@ const ProductInfo = () => {
         <div>
           this will have progression
           <ProgressBar now={25} />
+          <h1>{pickUpLocation}</h1>
         </div>
         <div>
           <h1>Select from our list of vehicles</h1>
@@ -76,19 +79,11 @@ const ProductInfo = () => {
                   </div>
                   <div>
                     <div>
-                      <p>$200</p>
+                      <p>${vehicle.price}</p>
                       <Button>
                         Book Now!
                       </Button>
                     </div>
-
-                    <div>
-                      <p>$300</p>
-                      <Button>
-                        Book Later!
-                      </Button>
-                    </div>
-
                   </div>
                 </Container>
               </Container><hr />
