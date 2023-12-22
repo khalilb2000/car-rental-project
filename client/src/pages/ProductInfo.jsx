@@ -7,8 +7,17 @@ import Tesla from '../img/tesla.png'
 
 import { Button, Container, Card, ProgressBar } from 'react-bootstrap';
 import { useState } from 'react';
-import { useLocation, useNavigate, Link  } from 'react-router-dom';
+import { useLocation, useNavigate, Link } from 'react-router-dom';
 // import Home from './Home';
+
+const styles = {
+  secondaryColor: {
+    backgroundColor: 'gray'
+  },
+  progressBar: {
+    width: '100px'
+  }
+}
 
 const ProductInfo = () => {
   const vehicles = [
@@ -70,43 +79,82 @@ const ProductInfo = () => {
 
 
   const location = useLocation();
-  const { pickUpLocation, zipCode, pickUpTime, pickupDate, dropOffDate} = location.state;
+  const { pickUpLocation, pickUpTime, pickUpDate, dropOffDate } = location.state;
 
   return (
     <>
       <div>
-        <div>
-          this will have progression
-          <ProgressBar now={25} />
-          <h1>{pickUpLocation}</h1>
+        <div className='d-flex gap-5 text-white' style={styles.secondaryColor}>
+          <div className='border-end px-4 ml-5'>
+            <h4>
+              Pick up location: <br />{pickUpLocation}
+            </h4>
+          </div>
+          <div className='border-end px-4 ml-5'>
+            <h4>
+              Pick up time: <br />{pickUpTime}
+            </h4>
+          </div>
+          <div className='border-end px-4 ml-5'>
+            <h4>
+              Pick up date: <br />{pickUpDate}
+            </h4>
+          </div>
+          <div className='border-end px-4 ml-5'>
+            <h4>
+              Drop off date: <br />{dropOffDate}
+            </h4>
+          </div>
         </div>
-        <div>
+        <div className='d-flex justify-content-center bg-black text-white'>
           <h1>Select from our list of vehicles</h1>
         </div>
-        <div className='d-flex flex-wrap gap-5 justify-content-around'>
+        <div className='d-flex justify-content-center gap-4 bg-primary '>
+          <div className='bg-white' style={styles.progressBar}>
+            hello
+          </div>
+          <div className='bg-white' style={styles.progressBar}>
+            hello
+          </div>
+          <div  className='bg-white' style={styles.progressBar}>
+            hello
+          </div>
+        </div>
+        <div className='d-flex flex-wrap justify-content-center mt-4'>
           {vehicles.map((vehicle) => (
-            <Card key={vehicle.id} className='col-3'>
-              <Container>
-                <img
-                  src={vehicle.image}
-                  alt={`${vehicle.brand} ${vehicle.model}`}
-                  style={{ cursor: 'pointer', marginRight: '20px', width: '225px' }}
-                />
-                <Container>
-                  <h2>{vehicle.brand} {vehicle.model}</h2>
-                  <div>
-                    <icon>info btn</icon>
+            <Card key={vehicle.id} className='mx-3 px-5' style={styles.card}>
+              <div className=''>
+                <div className='d-flex justify-content-center'>
+                  <img
+                    src={vehicle.image}
+                    alt={`${vehicle.brand} ${vehicle.model}`}
+                    style={{ cursor: 'pointer', marginRight: '20px', width: '225px' }}
+                  />
+                </div>
+                <div>
+                  <h4 className='fw-semibold'>
+                    {vehicle.brand} {vehicle.model}
+                  </h4>
+                  <div className='border border-end-0 border-start-0 mt-5 mb-5'>
+                    <ul className='d-flex justify-content-around list-unstyled'>
+                      <li>People: 5</li>
+                      <li>Storage: 5⭐️</li>
+                      <li>Gas: 230mi</li>
+                    </ul>
                   </div>
                   <div>
-                    <div>
-                      <p>${vehicle.price}</p>
-                      <Button>
+                    <div className='d-flex justify-content-around'>
+                      <p className='fs-6 fw-lighter text-body-tertiary'>
+                        <span className='fw-semibold fs-2 text-black'>${vehicle.price} </span>
+                        USD Per Week
+                      </p>
+                      <Button className='bg-warning text-black fw-bold'>
                         Book Now!
                       </Button>
                     </div>
                   </div>
-                </Container>
-              </Container><hr />
+                </div>
+              </div><hr />
             </Card>
           ))}
         </div>

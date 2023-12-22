@@ -1,5 +1,5 @@
 import './App.css';
-import '../src/index.css'
+import './index.css'
 import {
   ApolloClient,
   InMemoryCache,
@@ -41,9 +41,6 @@ const styles = {
     // backgroundColor: '#FA7D16',
     color: 'white'
   },
-  font: {
-    fontFamily: 'Roboto'
-  }
 }
 
 function App() {
@@ -52,8 +49,8 @@ function App() {
       <div className="justify-flex-start"  style={styles.borderStyle}>
         <Navbar/>
       </div>
-      <div className="vw-100 d-flex flex-column align-items-center justify-center" style={styles.font}>
-        <Outlet />
+      <div className="vw-100 d-flex flex-column align-items-center justify-center">
+        <Outlet/>
       </div>
       <div>
         <Footer />
