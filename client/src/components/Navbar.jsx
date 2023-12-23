@@ -3,19 +3,20 @@ import { Navbar, Nav, Container, Offcanvas } from 'react-bootstrap';
 import Auth from '../utils/auth';
 import { GET_ME } from '../utils/queries';
 import { useQuery } from '@apollo/client';
+import tireIcon from '../img/tireIcon.png'
 
 
 const styles = {
   logoSize: {
     fontSize: '2rem',
     fontFamily: 'Roboto Condensed',
-    // color: 'white'
+    borderBottom: '6px solid #fc0',
+    opacity: '10',
+    height: '53px'
   },
   fontColor: {
-    // color: "rgb(247, 139, 0)",
     color: 'black',
     textDecoration: 'underline'
-    // color: 'white'
   },
   secondaryContainer: {
     backgroundColor: 'rgb(247, 139, 0)',
@@ -24,6 +25,16 @@ const styles = {
   },
   font: {
     fontFamily: 'Roboto, sans-seriff'
+  },
+  icon: {
+    marginBottom: "10px"
+  },
+  loginBox: {
+    backgroundColor: '#fc0',
+    color: 'black',
+    borderRadius: '10px',
+    height: '39px'
+
   }
 }
 
@@ -39,7 +50,15 @@ export default function AppNavbar() {
       <Navbar key={expand} expand={expand} style={styles.border}>
         <Container fluid className=' mr-5 ml-5'>
           <Navbar.Brand href="/" style={styles.logoSize}>
-            WheelsOnDemand
+            Wheels
+            <span>
+              <img
+              src={tireIcon}
+              height={39}
+              style={styles.icon}
+              />
+            </span>
+            nDemand
           </Navbar.Brand>
           <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
           <Navbar.Offcanvas
@@ -74,7 +93,7 @@ export default function AppNavbar() {
                     </div>
                   </>
                 ) : (
-                  <Nav.Link as={Link} to="/login" className="link" activeClassName="active" style={styles.fontColor}>
+                  <Nav.Link as={Link} to="/login" className="link" activeClassName="active" style={styles.loginBox}>
                     Login/Sign up
                   </Nav.Link>
                 )}

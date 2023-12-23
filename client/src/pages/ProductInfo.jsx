@@ -106,20 +106,12 @@ const ProductInfo = () => {
             </h4>
           </div>
         </div>
-        <div className='d-flex justify-content-center bg-black text-white'>
+        <div className='d-flex justify-content-center '>
           <h1>Select from our list of vehicles</h1>
         </div>
-        <div className='d-flex justify-content-center gap-4 bg-primary '>
-          <div className='bg-white' style={styles.progressBar}>
-            hello
-          </div>
-          <div className='bg-white' style={styles.progressBar}>
-            hello
-          </div>
-          <div  className='bg-white' style={styles.progressBar}>
-            hello
-          </div>
-        </div>
+
+        <ProgressBar now={50} />
+
         <div className='d-flex flex-wrap justify-content-center mt-4'>
           {vehicles.map((vehicle) => (
             <Card key={vehicle.id} className='mx-3 px-5' style={styles.card}>
@@ -148,7 +140,7 @@ const ProductInfo = () => {
                         <span className='fw-semibold fs-2 text-black'>${vehicle.price} </span>
                         USD Per Week
                       </p>
-                      <Button className='bg-warning text-black fw-bold'>
+                      <Button className='bg-warning text-black fw-bold ml-2'>
                         Book Now!
                       </Button>
                     </div>
@@ -159,7 +151,9 @@ const ProductInfo = () => {
           ))}
         </div>
       </div>
-      <Link to="/Finish">to finish</Link>
+      {/* <Link to="/Finish">
+        to finish
+      </Link> */}
     </>
   );
 };
