@@ -21,9 +21,10 @@ const style = {
     backgroundColor: 'white'
   },
   accentBtn: {
-    // backgroundColor: '#BA5236',
-    backgroundColor: 'rgb(0, 40, 95)',
-    height: '4rem'
+    backgroundColor: '#fc0',
+    height: '4rem',
+    color: 'black',
+    fontWeight: '800'
   },
   font: {
     fontFamily: 'Roboto, sans-seriff'
