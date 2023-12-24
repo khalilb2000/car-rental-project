@@ -3,12 +3,10 @@
 For more information on MIT visit https://opensource.org/licenses/MIT
 
 # Wheels On Demand
-
-This is a MERN Stack Application, a car rental platform that allows users to book rentals through a login, location and date picker, car selection and payment pages. This app uses React for the front end, uses GraphQL with a Node.js and Express.js server, uses MongoDB and the Mongoose ODM for the database, uses, Stripe for payments, uses queries and mutations for retrieving, adding, updating, and deleting data, is deployed using Heroku,has a polished UI, is responsive, interactive, and includes authentication (JWT).
-
 ## Description
 
-The app allows to create a login. This is used to reserve a car.
+MERN Stack Application, a rental platform that allows users to book cars. This is a ongoing project and is by no chance complete 😅. The site, does however, fully work. The login and jwt are in the project but just commented out. I will be updating the website and making it better over time. It is a learning process for me and I hope to make it a fully functional website one day.
+
 ## Table of Contents
 
 - [Installation](#installation)
@@ -29,15 +27,17 @@ To get started follow these steps:
 
 ## Usage
 
-To use the website:
+Can go through the rental process from start to finish.
 
-1. Create an account and login
-2. Click on book now and follow the steps
 
 ## Credits
 Group Members: Daniel, Elizabeth, Faye, Joshua, and Khalil
 
+Before
 ![websiteImage](./img/Screenshot%202023-11-15%20144235.png)
+
+After
+![websiteImage](./img/Screenshot%202023-12-24%20at%2011.54.34 AM.png)
 
 ### <a href="https://wheelsondemand-045ef1cbf89f.herokuapp.com/" target="_blank">Website Link</a>
 
@@ -68,6 +68,8 @@ SOFTWARE.
 
 ## Features
 
-- User account creation.
-- Save cars
-
+- React
+- login/signup (coming soon)
+- JWT (coming soon)
+- apollo server (coming soon)
+- Cookie/Persistent data (coming soon)
