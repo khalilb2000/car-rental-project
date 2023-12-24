@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import ProgressBar from 'react-bootstrap/ProgressBar';
 import { Container, Button } from 'react-bootstrap';
 import Auth from '../utils/auth';
@@ -14,7 +14,11 @@ const style = {
 
 const Finish = () => {
   const { loading, error, data } = useQuery(GET_ME);
+  const navigate = useNavigate();
+  const location = useLocation();
   const userData = data?.me || {};
+
+  const { pickUpLocation, pickUpTime, pickUpDate, dropOffDate, vehicleData } = location.state;
 
 
   return (
@@ -23,23 +27,24 @@ const Finish = () => {
         <h1>Congrats  {userData.username}! 100% </h1>
         <ProgressBar animated now={100} />
         <Container className='d-flex col-12 gap-5 m-5 justify-flex-end'>
-          <Link to='/location'>
+          {/* <Link to='/product-info'> */}
             <Button
               onClick={() => {
-                navigate('/location',
+                navigate('/product-info',
                   {
                     replace: true,
                     state: {
-                      zipCode: location.state.zipCode,
-                      pickupDate: location.state.pickupDate,
+                      pickUpLocation: location.state.pickUpLocation,
+                      pickUpDate: location.state.pickUpDate,
                       dropOffDate: location.state.dropOffDate,
-                      selectedVehicle: location.state.selectedVehicle
+                      pickUpTime: location.state.pickUpTime,
+                      vehicleData: null,
                     }
                   })
               }}>
-              Start Over
+              ⬅️ vehicles
             </Button>
-          </Link>
+          {/* </Link> */}
           <Link to='/'>
             <Button>
               Cancel
@@ -53,18 +58,21 @@ const Finish = () => {
         <Container className='d-flex'>
 
           <Container>
-            <p><span className='fw-light'>Pick-up Date</span>:<br /> <span className='fs-3'></span></p>
-            <p><span className='w-light'>Zip Code</span>:<br /> <span className='fs-3'></span></p>
+            <p><span className='fw-light'>Pick-up Date</span>:<br /> <span className='fs-3'>{pickUpDate}</span></p>
+            <p><span className='w-light'>Location</span>:<br /> <span className='fs-3'>{pickUpLocation}</span></p>
           </Container>
 
           <Container>
-            <p><span className='fw-light'>Drop-off Date</span>:<br /> <span className='fs-3'></span></p>
+            <p><span className='fw-light'>Drop-off Date</span>:<br /> <span className='fs-3'>{dropOffDate}</span></p>
+          </Container>
+          <Container>
+            <p><span className='fw-light'>Pick-Up Time</span>:<br /> <span className='fs-3'>{pickUpTime}</span></p>
           </Container>
 
         </Container>
 
         <Container style={style.backDrop} >
-          <p><span className='fw-light'>Selected Vehicle</span>: <br /> <span className='fs-3'></span></p>
+          <p><span className='fw-light'>Selected Vehicle</span>: <br /> <span className='fs-3'>{vehicleData.brand} {vehicleData.model}</span></p>
         </Container>
       </Container>
       <h1>Email with detail to {userData.email}</h1>

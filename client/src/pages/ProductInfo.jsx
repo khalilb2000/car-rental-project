@@ -5,7 +5,7 @@ import toyota from '../img/toyota-camry.png';
 import Van from '../img/chevyVan.png';
 import Tesla from '../img/tesla.png'
 
-import { Button, Container, Card, ProgressBar } from 'react-bootstrap';
+import { Button, Card, ProgressBar } from 'react-bootstrap';
 import { useState } from 'react';
 import { useLocation, useNavigate, Link } from 'react-router-dom';
 // import Home from './Home';
@@ -77,9 +77,21 @@ const ProductInfo = () => {
     }
   ];
 
-
+  const navigate = useNavigate();
   const location = useLocation();
   const { pickUpLocation, pickUpTime, pickUpDate, dropOffDate } = location.state;
+
+  const [vehicleData, setVehicleData] = useState(null)
+  // const handleImageClick = (vehicle) => {
+  //   setVehicleData((prevSelectedVehicle) => {
+  //     if (prevSelectedVehicle === vehicle.id) {
+  //       return null;
+  //     } else {
+  //       return vehicle.id;
+  //     }
+  //   });
+  // };
+
 
   return (
     <>
@@ -140,7 +152,21 @@ const ProductInfo = () => {
                         <span className='fw-semibold fs-2 text-black'>${vehicle.price} </span>
                         USD Per Week
                       </p>
-                      <Button className='bg-warning text-black fw-bold ml-2'>
+                      <Button className='bg-warning text-black fw-bold ml-2'
+                         onClick={() => {
+                          navigate('/finish',
+                            {
+                              replace: true,
+                              state: {
+                                pickUpLocation: location.state.pickUpLocation,
+                                pickUpTime: location.state.pickUpTime,
+                                pickUpDate: location.state.pickUpDate,
+                                dropOffDate: location.state.dropOffDate,
+                                vehicleData: vehicle,
+                              }
+                            })
+                        }}
+                      >
                         Book Now!
                       </Button>
                     </div>
