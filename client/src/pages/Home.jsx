@@ -40,8 +40,6 @@ const style = {
 
 }
 
-
-
 const Home = () => {
   // const isLoggedIn = Auth.loggedIn();
   const navigate = useNavigate();
