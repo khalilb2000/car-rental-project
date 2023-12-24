@@ -31,7 +31,8 @@ Can go through the rental process from start to finish.
 
 
 ## Credits
-Group Members: Daniel, Elizabeth, Faye, Joshua, and Khalil
+Group Members: Daniel, Elizabeth, Faye, Joshua, and Khalil. <br />
+Currently just me but my group helped me build the foundation when we were in the bootcamp (ended 11/15/23)
 
 Before
 ![websiteImage](./img/Screenshot%202023-11-15%20144235.png)
@@ -39,7 +40,7 @@ Before
 After
 ![websiteImage](./img/Screenshot%202023-12-24%20at%2011.54.34 AM.png)
 
-### <a href="https://wheelsondemand-045ef1cbf89f.herokuapp.com/" target="_blank">Website Link</a>
+### <a href="https://wheelsondemand-045ef1cbf89f.herokuapp.com/" target="_blank">Website Link</a> Currently under Maintance
 
 
 ## License
